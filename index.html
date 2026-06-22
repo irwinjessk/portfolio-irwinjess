@@ -43,8 +43,11 @@
     <!--Theme Color-->
     <link rel="stylesheet" href="./assets/css/portfolio/blue.css" id="optional-color" as="style"
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
-    <!--MAIN TITLE-->
     <title>Irwin Portfolio</title>
+    <!--Resume Slider CSS-->
+    <link rel="stylesheet" href="./assets/css/portfolio/resume-slider.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <!--Tech Stack CSS-->
+    <link rel="stylesheet" href="./assets/css/portfolio/tech-stack.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="85">
@@ -81,15 +84,16 @@
                     <li>
                         <a href="#about" class="nav-link">A propos</a>
                     </li>
+                     <li>
+                        <a href="#resume" class="nav-link">Competences</a>
+                    </li>
                     <li>
                         <a href="#service" class="nav-link">Services</a>
                     </li>
                     <li>
                         <a href="#portfolio" class="nav-link">Projets</a>
                     </li>
-                    <li>
-                        <a href="#resume" class="nav-link">Competences</a>
-                    </li>
+                   
                     <li>
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
@@ -227,173 +231,379 @@
                     </div>
                 </div>
             </div>
+            <div class="resume-tabs-container mt-5 pt-5 border-top border-dark">
+                <!-- HEADER (Tabs) -->
+                <div class="tabs-header d-flex justify-content-center mb-5">
+                    <button class="resume-tab active" data-tab="formation">
+                        Formation <i class="fas fa-check tab-icon"></i>
+                    </button>
+                    <button class="resume-tab" data-tab="experience">
+                        Expérience <i class="fas fa-check tab-icon d-none"></i>
+                    </button>
+                </div>
+
+                <!-- CONTENT (Slider) -->
+                <div class="tabs-content-wrapper position-relative overflow-hidden">
+                    
+                    <!-- FORMATION TAB -->
+                    <div class="tab-pane-custom active" id="pane-formation">
+                        <div class="resume-slider" id="slider-formation">
+                            <div class="resume-slide-track d-flex transition-transform">
+                                
+                                <!-- Slide 1 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Master 1 MAGIR</h3>
+                                                <h5 class="text-primary mb-3">2024 - 2025 (En cours)</h5>
+                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Génie Informatique et Réseaux.</p>
+                                                <p class="mb-3 text-light"><strong class="text-primary">Objectif:</strong> Approfondissement des architectures réseaux, sécurité et ingénierie logicielle avancée.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
+                                                    <span><i class="fas fa-network-wired text-primary"></i> Informatique & Réseaux</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Licence en RGL</h3>
+                                                <h5 class="text-primary mb-3">2021 - 2025</h5>
+                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Réseaux et Génie Logiciel (RGL).</p>
+                                                <p class="mb-3 text-light"><strong class="text-primary">Compétences:</strong> Conception, développement d'applications, et administration de réseaux informatiques.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
+                                                    <span><i class="fas fa-code text-primary"></i> Réseaux & Logiciel</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">BTS IDA</h3>
+                                                <h5 class="text-primary mb-3">2022 - 2023</h5>
+                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Informatique Développeur d’Applications.</p>
+                                                <p class="mb-3 text-light"><strong class="text-primary">Bases:</strong> Algorithmique, programmation orientée objet, bases de données et développement web.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
+                                                    <span><i class="fas fa-laptop text-primary"></i> Développement Web</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center" id="pagination-formation">
+                                <button class="resume-dot active" aria-label="Slide 1"></button>
+                                <button class="resume-dot" aria-label="Slide 2"></button>
+                                <button class="resume-dot" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPERIENCE TAB -->
+                    <div class="tab-pane-custom d-none" id="pane-experience">
+                        <div class="resume-slider" id="slider-experience">
+                            <div class="resume-slide-track d-flex transition-transform">
+                                
+                                <!-- Slide 1 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 120px; height: 120px; background: #000; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/atos_digital_academy-removebg-preview.png" alt="ATOS Logo" style="width: 110%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Stagiaire Développeur FullStack</h3>
+                                                <h5 class="text-primary mb-3">Juillet 2025 - Sept. 2025 (3 mois)</h5>
+                                                <p class="mb-2 text-light small"><strong class="text-primary">Projets clés:</strong> VoteSmart (Front-End), AdaBank (PostgreSQL, DRF, JWT) et MonEtabl.</p>
+                                                <p class="mb-3 text-light small"><strong class="text-primary">DevOps & Intégration:</strong> Docker, CI/CD GitLab, Kubernetes + ArgoCD, création d'APIs de liaison.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> ATOS</span>
+                                                    <span><i class="fas fa-star text-primary"></i> Full-Stack & DevOps</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slide 2 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/Y3.jpeg" alt="Y3 Audit Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Stagiaire IT</h3>
+                                                <h5 class="text-primary mb-3">15 Août 2024 – 15 Janvier 2025 (6 mois)</h5>
+                                                <p class="mb-2 text-light small"><strong class="text-primary">Développement:</strong> Conception et réalisation d’une application de génération automatique de lettres de mission.</p>
+                                                <p class="mb-3 text-light small"><strong class="text-primary">Consulting:</strong> Participation aux activités du service consulting et soutien technique interne.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> Y3 Audit & Conseils</span>
+                                                    <span><i class="fas fa-desktop text-primary"></i> IT & Consulting</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/amyris-logo.png" alt="Amyris Consultance Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Assistant Stagiaire Projet</h3>
+                                                <h5 class="text-primary mb-3">01 Juin 2023 – 30 Août 2023 (3 mois)</h5>
+                                                <p class="mb-2 text-light small"><strong class="text-primary">Gestion:</strong> Assistance à la planification, suivi, reporting et rédaction des documents de projet.</p>
+                                                <p class="mb-3 text-light small"><strong class="text-primary">Formation:</strong> Accompagnement et initiation des jeunes entrepreneurs aux outils de gestion de projet.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> Amyris Consultance</span>
+                                                    <span><i class="fas fa-tasks text-primary"></i> Gestion de Projet</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="resume-slide w-100 flex-shrink-0">
+                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                    <img src="./assets/images/portfolio/cnac-logo.jpeg" alt="CNAC Logo" style="width: 80%; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h3 class="mb-1 text-white">Stagiaire Dév. & Réseau</h3>
+                                                <h5 class="text-primary mb-3">25 Octobre 2022 – 24 Janvier 2023 (3 mois)</h5>
+                                                <p class="mb-2 text-light small"><strong class="text-primary">Développement:</strong> Création d’une application de gestion des stagiaires du centre.</p>
+                                                <p class="mb-3 text-light small"><strong class="text-primary">Réseau:</strong> Participation à la maintenance du réseau interne et aux activités techniques informatiques.</p>
+                                                <hr class="border-secondary my-3">
+                                                <div class="d-flex justify-content-between text-muted small">
+                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> CNAC</span>
+                                                    <span><i class="fas fa-server text-primary"></i> IT & Réseau</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center" id="pagination-experience">
+                                <button class="resume-dot active" aria-label="Slide 1"></button>
+                                <button class="resume-dot" aria-label="Slide 2"></button>
+                                <button class="resume-dot" aria-label="Slide 3"></button>
+                                <button class="resume-dot" aria-label="Slide 4"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
         </section>
         <!--ABOUT SECTION END-->
 
-        <!--FACTS SECTION START-->
-        <div class="section facts backgound-section"
-            style="background-image: url(https://via.placeholder.com/1920x1080)" data-aos-id="facts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
-                        <div class="fact-single text-center p-4 shadow rounded ">
-                            <div class="fact-icon mb-3" style="font-size:2rem; color:#007bff;">
-                                <span class="mbri-timer"></span>
-                            </div>
-                            <div class="fact-info">
-                                <span class="tmcounter font-weight-bold" data-from="0" data-to="5"
-                                    data-speed="1500">5</span>+
-                            </div>
-                            <div class="fact-meta">
-                                <span>Années d'expérience</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
-                        <div class="fact-single text-center p-4 shadow rounded ">
-                            <div class="fact-icon mb-3" style="font-size:2rem; color:#28a745;">
-                                <span class="mbri-smile-face"></span>
-                            </div>
-                            <div class="fact-info">
-                                <span class="tmcounter font-weight-bold" data-from="0" data-to="120"
-                                    data-speed="1500">120</span>+
-                            </div>
-                            <div class="fact-meta">
-                                <span>Clients satisfaits</span>
+        <!--TECH STACK SECTION START-->
+        <section class="tech-stack" id="service">
+            <div class="tech-stack-header text-center">
+                <h2 class="tech-stack-title" data-aos="heading-show">TECH STACK</h2>
+                <p class="tech-stack-subtitle">Mes outils préférés pour concevoir des solutions</p>
+            </div>
+
+            <div class="tech-carousel">
+                <!-- WRAPPER CONTAINER -->
+                <div class="tech-carousel-wrapper">
+                    
+                    <!-- TRACK -->
+                    <div class="tech-carousel-track">
+                        
+                        <!-- ITEM 1 -->
+                        <div class="tech-item" data-tech="github">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">GitHub</h3>
+                                    <p class="tech-desc">Gestion de version</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
-                        <div class="fact-single text-center p-4 shadow rounded">
-                            <div class="fact-icon mb-3" style="font-size:2rem; color:#ffc107;">
-                                <span class="mbri-magic-stick"></span>
-                            </div>
-                            <div class="fact-info">
-                                <span class="tmcounter font-weight-bold" data-from="0" data-to="50"
-                                    data-speed="1500">50</span>+
-                            </div>
-                            <div class="fact-meta">
-                                <span>Projets réalisés</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
-                        <div class="fact-single text-center p-4 shadow rounded ">
-                            <div class="fact-icon mb-3" style="font-size:2rem; color:#17a2b8;">
-                                <span class="mbri-save"></span>
-                            </div>
-                            <div class="fact-info">
-                                <span class="tmcounter font-weight-bold" data-from="0" data-to="3000"
-                                    data-speed="1500">3000</span>+
-                            </div>
-                            <div class="fact-meta">
-                                <span>Téléchargements</span>
+
+                        <!-- ITEM 2 -->
+                        <div class="tech-item" data-tech="figma">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-figma"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">Figma</h3>
+                                    <p class="tech-desc">Design UI/UX</p>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- ITEM 3 -->
+                        <div class="tech-item" data-tech="aws">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">AWS</h3>
+                                    <p class="tech-desc">Services Cloud</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 4 -->
+                        <div class="tech-item" data-tech="html">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">HTML 5</h3>
+                                    <p class="tech-desc">Intégration Web</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 5 -->
+                        <div class="tech-item" data-tech="css">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">CSS 3</h3>
+                                    <p class="tech-desc">Mise en forme</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 6 -->
+                        <div class="tech-item" data-tech="javascript">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">JavaScript</h3>
+                                    <p class="tech-desc">Programmation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 7 -->
+                        <div class="tech-item" data-tech="react">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">React</h3>
+                                    <p class="tech-desc">Framework Front</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 8 -->
+                        <div class="tech-item" data-tech="nodejs">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">Node.js</h3>
+                                    <p class="tech-desc">Environnement Back</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 9 -->
+                        <div class="tech-item" data-tech="python">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">Python</h3>
+                                    <p class="tech-desc">Back-End & Data</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ITEM 10 -->
+                        <div class="tech-item" data-tech="docker">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h3 class="tech-name">Docker</h3>
+                                    <p class="tech-desc">Conteneurisation</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-        <!--FACTS SECTION END-->
 
-        <!--SERVICES SECTION START-->
-        <section class="services" id="service">
-            <div class="container d-flex flex-column justify-content-between h-100">
-
-                <!-- Titre de section -->
-                <div class="section-title flex-grow-1">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <h2 data-aos="heading-show" class="rect_heading">Mes Compétences</h2>
-                                <p class="m-0">Développement Full-Stack, conception UI/UX et intégration de solutions
-                                    DevOps pour des projets performants et évolutifs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contenu -->
-                <div class="section-content flex-grow-1">
-                    <div class="row">
-
-                        <!-- Développement Backend -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-database"></span>
-                                </div>
-                                <h3 class="my-3">Back-End Development</h3>
-                                <p>Création d’API et d’applications robustes avec <strong>Python/Django</strong> et
-                                    intégration de bases de données performantes.</p>
-                            </div>
-                        </div>
-
-                        <!-- Développement Frontend -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-tablet"></span>
-                                </div>
-                                <h3 class="my-3">Front-End Development</h3>
-                                <p>Interfaces modernes et interactives avec <strong>React.js</strong>, optimisées pour
-                                    tous les appareils (responsive design).</p>
-                            </div>
-                        </div>
-
-                        <!-- DevOps & Déploiement -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-rocket"></span>
-                                </div>
-                                <h3 class="my-3">DevOps & Cloud</h3>
-                                <p>Mise en place d’intégration et de déploiement continus (CI/CD), automatisation et
-                                    hébergement cloud sécurisé.</p>
-                            </div>
-                        </div>
-
-                        <!-- UI/UX Design -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-layers"></span>
-                                </div>
-                                <h3 class="my-3">UI/UX Design</h3>
-                                <p>Conception d’expériences utilisateur intuitives et esthétiques, en alliant ergonomie
-                                    et identité visuelle.</p>
-                            </div>
-                        </div>
-
-                        <!-- Optimisation & Performance -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-hearth"></span>
-                                </div>
-                                <h3 class="my-3">Optimisation</h3>
-                                <p>Amélioration des performances, optimisation SEO et réduction des temps de chargement
-                                    pour une meilleure expérience.</p>
-                            </div>
-                        </div>
-
-                        <!-- Maintenance & Support -->
-                        <div class="col-lg-4 col-md-6 mt-4 mb-2">
-                            <div class="service-single text-center p-5">
-                                <div class="service-icon">
-                                    <span class="mbri-hot-cup"></span>
-                                </div>
-                                <h3 class="my-3">Maintenance</h3>
-                                <p>Suivi, correction de bugs et mise à jour continue pour garantir la stabilité et la
-                                    sécurité des projets.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+            <div class="tech-stack-counter">10+</div>
         </section>
+        <!--TECH STACK SECTION END-->
 
 
         <!--SERVICE SECTION START-->
@@ -1093,6 +1303,8 @@
     <script src="./assets/js/portfolio/alert.js"></script>
     <script src="./assets/js/portfolio/contact.js"></script>
     <script src="./assets/js/portfolio/custom.js"></script>
+    <script src="./assets/js/portfolio/resume-slider.js"></script>
+    <script src="./assets/js/portfolio/tech-stack.js"></script>
 </body>
 
 </html>

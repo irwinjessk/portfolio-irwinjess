@@ -1,0 +1,107 @@
+/* Composant Slider de CV (Formation et Expériences) */
+:root {
+    --resume-primary: #1a7bb7; /* Le bleu du projet */
+    --resume-bg: #1e1e24;
+    --resume-border: #333;
+}
+
+.resume-tabs-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.resume-tab {
+    background: transparent;
+    color: #888;
+    border: 2px solid #444;
+    padding: 12px 35px;
+    margin: 0 10px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.resume-tab:hover {
+    color: #fff;
+    border-color: #666;
+    transform: translateY(-2px);
+}
+
+.resume-tab.active {
+    background: var(--resume-primary);
+    color: #fff;
+    border-color: var(--resume-primary);
+    box-shadow: 0 8px 20px rgba(26, 123, 183, 0.4);
+}
+
+.resume-tab.active .tab-icon {
+    display: inline-block !important;
+}
+
+.resume-slide-track {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.resume-card {
+    background: rgba(26, 123, 183, 0.03); /* Subtle blue tint for dark mode */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(26, 123, 183, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.resume-card:hover {
+    transform: translateY(-8px);
+    background: rgba(26, 123, 183, 0.08); /* Slightly more visible on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(26, 123, 183, 0.5);
+}
+
+.resume-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #555;
+    border: none;
+    margin: 0 8px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.resume-dot:hover {
+    background: #888;
+    transform: scale(1.2);
+}
+
+.resume-dot.active {
+    background: var(--resume-primary);
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(26, 123, 183, 0.5);
+}
+
+.resume-pagination {
+    padding: 10px 0;
+}
+
+.tab-pane-custom {
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
