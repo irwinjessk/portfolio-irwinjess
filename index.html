@@ -48,6 +48,8 @@
     <link rel="stylesheet" href="./assets/css/portfolio/resume-slider.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <!--Tech Stack CSS-->
     <link rel="stylesheet" href="./assets/css/portfolio/tech-stack.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <!--My Services CSS-->
+    <link rel="stylesheet" href="./assets/css/portfolio/services.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="85">
@@ -84,11 +86,14 @@
                     <li>
                         <a href="#about" class="nav-link">A propos</a>
                     </li>
-                     <li>
-                        <a href="#resume" class="nav-link">Competences</a>
+                    <li>
+                        <a href="#parcours" class="nav-link">Parcours</a>
                     </li>
                     <li>
-                        <a href="#service" class="nav-link">Services</a>
+                        <a href="#techstack" class="nav-link">Competences</a>
+                    </li>
+                    <li>
+                        <a href="#myservices" class="nav-link">Services</a>
                     </li>
                     <li>
                         <a href="#portfolio" class="nav-link">Projets</a>
@@ -231,7 +236,23 @@
                     </div>
                 </div>
             </div>
-            <div class="resume-tabs-container mt-5 pt-5 border-top border-dark">
+        </section>
+        <!--ABOUT SECTION END-->
+
+        <!--PARCOURS SECTION START-->
+        <section class="parcours" id="parcours">
+            <div class="container">
+                <div class="section-title">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <h2 data-aos="heading-show" class="rect_heading">Parcours</h2>
+                                <p class="m-0">Formation et expériences professionnelles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-tabs-container mt-5 pt-5 border-top border-dark">
                 <!-- HEADER (Tabs) -->
                 <div class="tabs-header d-flex justify-content-center mb-5">
                     <button class="resume-tab active" data-tab="formation">
@@ -447,14 +468,13 @@
                     </div>
 
                 </div>
+                </div>
             </div>
-
-
         </section>
-        <!--ABOUT SECTION END-->
+        <!--PARCOURS SECTION END-->
 
         <!--TECH STACK SECTION START-->
-        <section class="tech-stack" id="service">
+        <section class="tech-stack" id="techstack">
             <div class="tech-stack-header text-center">
                 <h2 class="tech-stack-title" data-aos="heading-show">TECH STACK</h2>
                 <p class="tech-stack-subtitle">Mes outils préférés pour concevoir des solutions</p>
@@ -604,6 +624,94 @@
             <div class="tech-stack-counter">10+</div>
         </section>
         <!--TECH STACK SECTION END-->
+
+        <!-- MY SERVICES SECTION START -->
+        <section class="my-services" id="myservices">
+            <div class="container">
+                <!-- HEADER -->
+                <div class="services-header" data-aos="fade-up">
+                    <h2 class="services-title">
+                        Mes <span class="services-accent">Services</span>
+                    </h2>
+                    <p class="services-description">
+                        Je vous accompagne dans la réalisation de vos projets digitaux de A à Z, en combinant design esthétique et développement robuste.
+                    </p>
+                </div>
+
+                <!-- SERVICES GRID -->
+                <div class="services-grid">
+                    
+                    <!-- SERVICE CARD 1: UI/UX Design -->
+                    <div class="service-card" data-service-id="uiux-design">
+                        <div class="service-image-wrapper">
+                            <img 
+                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=UI/UX+Design" 
+                                alt="UI/UX Design Services"
+                                class="service-image"
+                            >
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-description">
+                                Création d'interfaces utilisateur intuitives et design d'expérience utilisateur optimisée pour vos produits.
+                            </p>
+                        </div>
+                        <div class="service-footer">
+                            <a href="services/uiux-design.html" class="service-link" aria-label="Détails UI/UX Design">
+                                <span class="service-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE CARD 2: Web Design (FEATURED) -->
+                    <div class="service-card service-card--featured" data-service-id="web-design">
+                        <div class="service-badge">Featured</div>
+                        <div class="service-image-wrapper">
+                            <img 
+                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Web+Design" 
+                                alt="Web Design Services"
+                                class="service-image"
+                            >
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Web Design</h3>
+                            <p class="service-description">
+                                Conception de sites web modernes, responsifs et performants avec les dernières technologies.
+                            </p>
+                        </div>
+                        <div class="service-footer">
+                            <a href="services/web-design.html" class="service-link" aria-label="Détails Web Design">
+                                <span class="service-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE CARD 3: Landing Page -->
+                    <div class="service-card" data-service-id="landing-page">
+                        <div class="service-image-wrapper">
+                            <img 
+                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Landing+Page" 
+                                alt="Landing Page Services"
+                                class="service-image"
+                            >
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Landing Page</h3>
+                            <p class="service-description">
+                                Pages d'atterrissage optimisées pour la conversion et la capture de leads.
+                            </p>
+                        </div>
+                        <div class="service-footer">
+                            <a href="services/landing-page.html" class="service-link" aria-label="Détails Landing Page">
+                                <span class="service-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- MY SERVICES SECTION END -->
 
 
         <!--SERVICE SECTION START-->
@@ -799,130 +907,7 @@
             </div>
         </div>
         <!--PROJECT Section END-->
-        <!--RESUME SECTION START-->
-        <section class="resume" id="resume">
-
-            <div class="container d-flex flex-column justify-content-between h-100 ">
-
-                <div class="section-title flex-grow-1">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <h2 data-aos="heading-show" class="rect_heading">My Experience</h2>
-                                <p class="m-0">If you are going to use a passage of Lorem Ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-content flex-grow-1">
-                    <div class="row mt-4">
-                        <div class="col-lg-6">
-                            <h3 class="mb-4">Education</h3>
-                            <ul class="list-inline resume-list">
-                                <li>
-                                    <h4 class="mb-2">Univercity of Boston, Computer Science</h4>
-                                    <span class="time">2010 - 2016</span>
-                                    <p class="my-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                        nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                                </li>
-                                <li>
-                                    <h4 class="mb-2">Master Computer Science</h4>
-                                    <span class="time">2016 - 2018</span>
-                                    <p class="my-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                        nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <h3 class="mb-4">Experience</h3>
-                            <ul class="list-inline resume-list">
-                                <li>
-                                    <h4 class="mb-2">UI/UX Designer</h4>
-                                    <span class="time">2010 - 2016</span>
-                                    <p class="my-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                        nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                                </li>
-                                <li>
-                                    <h4 class="mb-2">Web Developer</h4>
-                                    <span class="time">2016 - 2018</span>
-                                    <p class="my-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                        nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-lg-6">
-                            <div class="skill d-flex flex-row pr-4 pr-sm-3 px-3 mb-4">
-                                <div class="skill-progress flex-grow-1">
-                                    <div class="progresss-info d-flex flex-row justify-content-between mt-2 mb-1">
-                                        <span>JavaScript</span>
-                                        <span class="text-right progress-percent">75%</span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" data-percent="75"
-                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="skill d-flex flex-row pr-4 pr-sm-3 px-3 mb-4">
-                                <div class="skill-progress flex-grow-1">
-                                    <div class="progresss-info d-flex flex-row justify-content-between mt-2 mb-1">
-                                        <span>Wordpress</span>
-                                        <span class="text-right progress-percent">90%</span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" data-percent="90"
-                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="skill d-flex flex-row pr-4 pr-sm-3 px-3 mb-4">
-                                <div class="skill-progress flex-grow-1">
-                                    <div class="progresss-info d-flex flex-row justify-content-between mt-2 mb-1">
-                                        <span>HTML 5</span>
-                                        <span class="text-right progress-percent">95%</span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" data-percent="95"
-                                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="skill d-flex flex-row pr-4 pr-sm-3 px-3 mb-4">
-                                <div class="skill-progress flex-grow-1">
-                                    <div class="progresss-info d-flex flex-row justify-content-between mt-2 mb-1">
-                                        <span>CSS 3</span>
-                                        <span class="text-right progress-percent">85%</span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" data-percent="85"
-                                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-        <!--RESUME SECTION START-->
+        
         <!--CLIENT SECTION START-->
         <div class="section testimonial backgound-section"
             style="background-image: url(https://via.placeholder.com/1920x1080)">
@@ -1027,108 +1012,7 @@
         </div>
         <!--CLIENT SECTION END-->
         <!--BLOG SECTION START-->
-        <section class="blog" id="blog">
-            <div class="container d-flex flex-column justify-content-between h-100 ">
-                <div class="section-title flex-grow-1">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <h2 data-aos="heading-show" class="rect_heading">My Articles</h2>
-                                <p class="m-0">The standard chunk of Lorem Ipsum used since the 1500s</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-content flex-grow-1">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="news-item mb-5 mb-lg-0">
-                                <div class="news-cover">
-                                    <img src="https://via.placeholder.com/800x530" width="800" height="530" alt=""
-                                        class="img-fluid">
-                                </div>
-                                <div class="news-content p-4">
-                                    <div class="news-title mb-3">
-                                        <a href="#" class="blog-permalink">
-                                            <h3>How to write website content.</h3>
-                                        </a>
-                                    </div>
-                                    <div class="news-meta d-flex flex-row mb-4">
-                                        <div class="news-meta-single mr-3">
-                                            <span class="mbri-calendar"></span>
-                                            <span class="meta-value">11 March, 2020</span>
-                                        </div>
-                                        <div class="news-meta-single">
-                                            <span class="mbri-user"></span>
-                                            <span class="meta-value">by <a href="#">DJRIGA IRWIN JESSY</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="readMore">
-                                        <a href="#" class="btn btn-outline-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="news-item mb-5 mb-lg-0">
-                                <div class="news-cover">
-                                    <img src="https://via.placeholder.com/800x530" width="800" height="530" alt=""
-                                        class="img-fluid">
-                                </div>
-                                <div class="news-content p-4">
-                                    <div class="news-title mb-3">
-                                        <a href="#" class="blog-permalink">
-                                            <h3>9 Simple Tips for Graphic Designers</h3>
-                                        </a>
-                                    </div>
-                                    <div class="news-meta d-flex flex-row mb-4">
-                                        <div class="news-meta-single mr-3">
-                                            <span class="mbri-calendar"></span>
-                                            <span class="meta-value">29 March, 2020</span>
-                                        </div>
-                                        <div class="news-meta-single">
-                                            <span class="mbri-user"></span>
-                                            <span class="meta-value">by <a href="">DJRIGA IRWIN JESSY</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="readMore">
-                                        <a href="#" class="btn btn-outline-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="news-item mb-5 mb-lg-0">
-                                <div class="news-cover">
-                                    <img src="https://via.placeholder.com/800x530" width="800" height="530" alt=""
-                                        class="img-fluid">
-                                </div>
-                                <div class="news-content p-4">
-                                    <div class="news-title mb-3">
-                                        <a href="#" class="blog-permalink">
-                                            <h3>How Does Technology Change Lives</h3>
-                                        </a>
-                                    </div>
-                                    <div class="news-meta d-flex flex-row mb-4">
-                                        <div class="news-meta-single mr-3">
-                                            <span class="mbri-calendar"></span>
-                                            <span class="meta-value">15 April, 2020</span>
-                                        </div>
-                                        <div class="news-meta-single">
-                                            <span class="mbri-user"></span>
-                                            <span class="meta-value">by <a href="#">DJRIGA IRWIN JESSY</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="readMore">
-                                        <a href="#" class="btn btn-outline-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!--BLOG SECTION START-->
         <!--CONTACT SECTION START-->
         <section class="contact" id="contact">
@@ -1305,6 +1189,7 @@
     <script src="./assets/js/portfolio/custom.js"></script>
     <script src="./assets/js/portfolio/resume-slider.js"></script>
     <script src="./assets/js/portfolio/tech-stack.js"></script>
+    <script src="./assets/js/portfolio/services.js"></script>
 </body>
 
 </html>

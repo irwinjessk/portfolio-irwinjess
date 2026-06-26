@@ -1,0 +1,214 @@
+/* Composant My Services - Design Épuré & Smooth */
+.my-services {
+    padding: 100px 40px; /* Plus d'espace pour respirer */
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header Section */
+.services-header {
+    margin-bottom: 70px;
+    max-width: 650px;
+}
+
+.services-title {
+    font-size: 42px;
+    font-weight: 500; /* Police plus fine et élégante */
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.services-accent {
+    color: #4fa3d1; /* Bleu plus soft et lumineux dérivé du #1a7bb7 */
+    font-weight: 600;
+}
+
+.services-description {
+    font-size: 16px;
+    font-weight: 300; /* Police très douce */
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+/* Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Grille plus aérée */
+}
+
+/* Service Card (Minimal Glassmorphism) */
+.service-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.04); /* Bordure presque invisible */
+    border-radius: 20px; /* Coins plus doux */
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.2, 1); /* Transition ultra smooth */
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* EFFET HOVER - Doux et élégant */
+.service-card:hover {
+    transform: translateY(-5px); /* Élévation subtile */
+    border-color: rgba(26, 123, 183, 0.2); /* Bleu très léger */
+    background: linear-gradient(145deg, rgba(26, 123, 183, 0.05) 0%, rgba(26, 123, 183, 0.02) 100%);
+    box-shadow: 0 15px 35px rgba(26, 123, 183, 0.08); /* Ombre douce et diffuse */
+}
+
+/* FEATURED CARD */
+.service-card--featured {
+    border-color: rgba(26, 123, 183, 0.3);
+}
+
+.service-card--featured .service-title {
+    color: #4fa3d1;
+}
+
+.service-card--featured .service-arrow {
+    color: #fff;
+}
+
+.service-card--featured .service-link {
+    background: #1a7bb7;
+}
+
+/* Badge Featured */
+.service-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(26, 123, 183, 0.9);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Wrapper */
+.service-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.2, 1); /* Zoom plus lent et smooth */
+    display: block;
+    opacity: 0.9;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.03); /* Zoom très subtil */
+    opacity: 1;
+}
+
+/* Service Content */
+.service-content {
+    padding: 30px 24px 0; /* Plus de padding pour aérer */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-title {
+    font-size: 20px;
+    font-weight: 500; /* Police affinée */
+    color: #ffffff;
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+.service-card:hover .service-title {
+    color: #4fa3d1; /* Bleu clair au survol */
+}
+
+.service-description {
+    font-size: 14px;
+    font-weight: 300; /* Description légère */
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Service Footer avec Flèche */
+.service-footer {
+    padding: 20px 24px 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.service-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1);
+    cursor: pointer;
+}
+
+.service-link:hover, .service-card:hover .service-link {
+    background: #1a7bb7;
+    border-color: #1a7bb7;
+    transform: rotate(45deg); /* Suppression du scale(1.1) pour un effet plus pro */
+}
+
+.service-arrow {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.4s ease;
+}
+
+.service-link:hover .service-arrow, .service-card:hover .service-arrow {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .my-services {
+        padding: 60px 20px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .service-image-wrapper {
+        height: 200px;
+    }
+}

@@ -1,0 +1,112 @@
+/* Pages Détaillées des Services */
+.service-details {
+    padding-top: 120px; /* Espace pour le header fixed */
+    padding-bottom: 80px;
+    background: transparent;
+}
+
+.details-hero {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.details-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.details-content p {
+    font-size: 18px;
+    color: #a0a9c9;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.details-features {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.details-features h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a7bb7;
+    margin-bottom: 30px;
+}
+
+.details-features ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.details-features li {
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.details-features li::before {
+    content: "✓";
+    color: #1a7bb7;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #1a7bb7;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #1a7bb7;
+}
+
+.cta-button:hover {
+    background: transparent;
+    color: #1a7bb7;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .details-hero {
+        height: 250px;
+    }
+    .details-content h1 {
+        font-size: 36px;
+    }
+    .details-features {
+        padding: 30px 20px;
+    }
+}
