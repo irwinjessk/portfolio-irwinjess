@@ -81,13 +81,15 @@ $(window).on("load", function(){
 
     //Typed JS
 
-    var typed = new Typed('.welcome-text-type', {
-        strings: $('.welcome-text-type').data('options').split(","),
-        typeSpeed: 90,
-        backDelay: 2000,
-        backSpeed: 40,
-        loop: true
-    });
+    if ($('.welcome-text-type').length) {
+        var typed = new Typed('.welcome-text-type', {
+            strings: $('.welcome-text-type').data('options').split(","),
+            typeSpeed: 90,
+            backDelay: 2000,
+            backSpeed: 40,
+            loop: true
+        });
+    }
 
     //Counter
 

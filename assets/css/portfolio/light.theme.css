@@ -188,7 +188,7 @@ header .site-logo a {
 
 /* 3.2 Horizontal Header Style */
 header.horizontal_header .header-ins {
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.78);
   padding: 17px 0px;
 }
 

@@ -381,6 +381,26 @@ section.home .mono-background .mono-background-inner img.img-align-left {
   font-size: 1em;
   line-height: 40px;
   text-align: center;
+  -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons li a.social-linkedin:hover {
+  background-color: #007BB5;
+  border-color: #00A0DC;
+  color: #FFFFFF;
+}
+
+.social-icons li a.social-facebook:hover {
+  background-color: #3B5998;
+  border-color: #4267B2;
+  color: #FFFFFF;
+}
+
+.social-icons li a.social-whatsapp:hover {
+  background-color: #25D366;
+  border-color: #128C7E;
+  color: #FFFFFF;
 }
 
 .social-icons .list-inline-item:not(:last-child) {

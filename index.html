@@ -45,11 +45,17 @@
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <title>Irwin Portfolio</title>
     <!--Resume Slider CSS-->
-    <link rel="stylesheet" href="./assets/css/portfolio/resume-slider.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <link rel="stylesheet" href="./assets/css/portfolio/resume-slider.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <!--Tech Stack CSS-->
-    <link rel="stylesheet" href="./assets/css/portfolio/tech-stack.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <link rel="stylesheet" href="./assets/css/portfolio/tech-stack.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <!--My Services CSS-->
-    <link rel="stylesheet" href="./assets/css/portfolio/services.css" as="style" onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <link rel="stylesheet" href="./assets/css/portfolio/services.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <!--Projects CSS-->
+    <link rel="stylesheet" href="./assets/css/portfolio/projects.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="85">
@@ -98,7 +104,7 @@
                     <li>
                         <a href="#portfolio" class="nav-link">Projets</a>
                     </li>
-                   
+
                     <li>
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
@@ -182,14 +188,15 @@
                             <h3 class="m-0">DJRIGA IRWIN JESSY</h3>
                             <h5 class="text-primary mb-3">Ingénieur Logiciel Full-Stack</h5>
                             <p class="my-4">
-                                Ingénieur Logiciel Full-Stack, je conçois et déploie des systèmes complexes de A à Z. Mon
+                                Ingénieur Logiciel Full-Stack, je conçois et déploie des systèmes complexes de A à Z.
+                                Mon
                                 approche combine la maîtrise technique (Python/Django, React.js) et la rigueur de
                                 l'ingénierie : choix des bonnes architectures, application des patterns de conception
                                 (Clean Code) et automatisation DevOps. Je transforme des besoins métiers complexes en
                                 applications fiables, hautement évolutives et prêtes pour la production. Passionné par
                                 les défis technologiques, je recherche constamment à optimiser les performances et la
                                 sécurité des systèmes que je développe, tout en assurant une expérience utilisateur
-                                intuitive et moderne.   
+                                intuitive et moderne.
                             </p>
                             <div class="row">
                                 <div class="col-12">
@@ -220,13 +227,25 @@
                                     <div class="col-xl-6">
                                         <ul class="social-icons list-inline mt-4 mt-xl-0">
                                             <li class="list-inline-item">
-                                                <a href="https://github.com/irwinjessk" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                                                <a class="social-github" href="https://github.com/irwinjessk"
+                                                    target="_blank" rel="noopener noreferrer"><i
+                                                        class="fab fa-github"></i></a>
                                             </li>
                                             <li class="list-inline-item">
-                                                <a href="https://www.linkedin.com/in/irwin-djriga/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                                                <a class="social-linkedin"
+                                                    href="https://www.linkedin.com/in/irwin-djriga/" target="_blank"
+                                                    rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                                             </li>
                                             <li class="list-inline-item">
-                                                <a href="https://www.facebook.com/irwin.jess.1" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-facebook" href="https://www.facebook.com/irwin.jess.1"
+                                                    target="_blank" rel="noopener noreferrer"><i
+                                                        class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-whatsapp"
+                                                    href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j'aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration."
+                                                    target="_blank" rel="noopener noreferrer"><i
+                                                        class="fab fa-whatsapp"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -253,221 +272,292 @@
                     </div>
                 </div>
                 <div class="resume-tabs-container mt-5 pt-5 border-top border-dark">
-                <!-- HEADER (Tabs) -->
-                <div class="tabs-header d-flex justify-content-center mb-5">
-                    <button class="resume-tab active" data-tab="formation">
-                        Formation <i class="fas fa-check tab-icon"></i>
-                    </button>
-                    <button class="resume-tab" data-tab="experience">
-                        Expérience <i class="fas fa-check tab-icon d-none"></i>
-                    </button>
-                </div>
-
-                <!-- CONTENT (Slider) -->
-                <div class="tabs-content-wrapper position-relative overflow-hidden">
-                    
-                    <!-- FORMATION TAB -->
-                    <div class="tab-pane-custom active" id="pane-formation">
-                        <div class="resume-slider" id="slider-formation">
-                            <div class="resume-slide-track d-flex transition-transform">
-                                
-                                <!-- Slide 1 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Master 1 MAGIR</h3>
-                                                <h5 class="text-primary mb-3">2024 - 2025 (En cours)</h5>
-                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Génie Informatique et Réseaux.</p>
-                                                <p class="mb-3 text-light"><strong class="text-primary">Objectif:</strong> Approfondissement des architectures réseaux, sécurité et ingénierie logicielle avancée.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
-                                                    <span><i class="fas fa-network-wired text-primary"></i> Informatique & Réseaux</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Licence en RGL</h3>
-                                                <h5 class="text-primary mb-3">2021 - 2025</h5>
-                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Réseaux et Génie Logiciel (RGL).</p>
-                                                <p class="mb-3 text-light"><strong class="text-primary">Compétences:</strong> Conception, développement d'applications, et administration de réseaux informatiques.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
-                                                    <span><i class="fas fa-code text-primary"></i> Réseaux & Logiciel</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 3 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/pigier_logo.png" alt="Pigier Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">BTS IDA</h3>
-                                                <h5 class="text-primary mb-3">2022 - 2023</h5>
-                                                <p class="mb-2 text-light"><strong class="text-primary">Filière:</strong> Informatique Développeur d’Applications.</p>
-                                                <p class="mb-3 text-light"><strong class="text-primary">Bases:</strong> Algorithmique, programmation orientée objet, bases de données et développement web.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER Côte d'Ivoire</span>
-                                                    <span><i class="fas fa-laptop text-primary"></i> Développement Web</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <!-- Pagination -->
-                            <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center" id="pagination-formation">
-                                <button class="resume-dot active" aria-label="Slide 1"></button>
-                                <button class="resume-dot" aria-label="Slide 2"></button>
-                                <button class="resume-dot" aria-label="Slide 3"></button>
-                            </div>
-                        </div>
+                    <!-- HEADER (Tabs) -->
+                    <div class="tabs-header d-flex justify-content-center mb-5">
+                        <button class="resume-tab active" data-tab="formation">
+                            Formation <i class="fas fa-check tab-icon"></i>
+                        </button>
+                        <button class="resume-tab" data-tab="experience">
+                            Expérience <i class="fas fa-check tab-icon d-none"></i>
+                        </button>
                     </div>
 
-                    <!-- EXPERIENCE TAB -->
-                    <div class="tab-pane-custom d-none" id="pane-experience">
-                        <div class="resume-slider" id="slider-experience">
-                            <div class="resume-slide-track d-flex transition-transform">
-                                
-                                <!-- Slide 1 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 120px; height: 120px; background: #000; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/atos_digital_academy-removebg-preview.png" alt="ATOS Logo" style="width: 110%; object-fit: contain;">
+                    <!-- CONTENT (Slider) -->
+                    <div class="tabs-content-wrapper position-relative overflow-hidden">
+
+                        <!-- FORMATION TAB -->
+                        <div class="tab-pane-custom active" id="pane-formation">
+                            <div class="resume-slider" id="slider-formation">
+                                <div class="resume-slide-track d-flex transition-transform">
+
+                                    <!-- Slide 1 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/pigier_logo.png"
+                                                            alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Stagiaire Développeur FullStack</h3>
-                                                <h5 class="text-primary mb-3">Juillet 2025 - Sept. 2025 (3 mois)</h5>
-                                                <p class="mb-2 text-light small"><strong class="text-primary">Projets clés:</strong> VoteSmart (Front-End), AdaBank (PostgreSQL, DRF, JWT) et MonEtabl.</p>
-                                                <p class="mb-3 text-light small"><strong class="text-primary">DevOps & Intégration:</strong> Docker, CI/CD GitLab, Kubernetes + ArgoCD, création d'APIs de liaison.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> ATOS</span>
-                                                    <span><i class="fas fa-star text-primary"></i> Full-Stack & DevOps</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Slide 2 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/Y3.jpeg" alt="Y3 Audit Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Stagiaire IT</h3>
-                                                <h5 class="text-primary mb-3">15 Août 2024 – 15 Janvier 2025 (6 mois)</h5>
-                                                <p class="mb-2 text-light small"><strong class="text-primary">Développement:</strong> Conception et réalisation d’une application de génération automatique de lettres de mission.</p>
-                                                <p class="mb-3 text-light small"><strong class="text-primary">Consulting:</strong> Participation aux activités du service consulting et soutien technique interne.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> Y3 Audit & Conseils</span>
-                                                    <span><i class="fas fa-desktop text-primary"></i> IT & Consulting</span>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Master 1 MAGIR</h3>
+                                                    <h5 class="text-primary mb-3">2024 - 2025 (En cours)</h5>
+                                                    <p class="mb-2 text-light"><strong
+                                                            class="text-primary">Filière:</strong> Génie Informatique et
+                                                        Réseaux.</p>
+                                                    <p class="mb-3 text-light"><strong
+                                                            class="text-primary">Objectif:</strong> Approfondissement
+                                                        des architectures réseaux, sécurité et ingénierie logicielle
+                                                        avancée.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER
+                                                            Côte d'Ivoire</span>
+                                                        <span><i class="fas fa-network-wired text-primary"></i>
+                                                            Informatique & Réseaux</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/pigier_logo.png"
+                                                            alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Licence en RGL</h3>
+                                                    <h5 class="text-primary mb-3">2021 - 2025</h5>
+                                                    <p class="mb-2 text-light"><strong
+                                                            class="text-primary">Filière:</strong> Réseaux et Génie
+                                                        Logiciel (RGL).</p>
+                                                    <p class="mb-3 text-light"><strong
+                                                            class="text-primary">Compétences:</strong> Conception,
+                                                        développement d'applications, et administration de réseaux
+                                                        informatiques.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER
+                                                            Côte d'Ivoire</span>
+                                                        <span><i class="fas fa-code text-primary"></i> Réseaux &
+                                                            Logiciel</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/pigier_logo.png"
+                                                            alt="Pigier Logo" style="width: 80%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">BTS IDA</h3>
+                                                    <h5 class="text-primary mb-3">2022 - 2023</h5>
+                                                    <p class="mb-2 text-light"><strong
+                                                            class="text-primary">Filière:</strong> Informatique
+                                                        Développeur d’Applications.</p>
+                                                    <p class="mb-3 text-light"><strong
+                                                            class="text-primary">Bases:</strong> Algorithmique,
+                                                        programmation orientée objet, bases de données et développement
+                                                        web.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i> PIGIER
+                                                            Côte d'Ivoire</span>
+                                                        <span><i class="fas fa-laptop text-primary"></i> Développement
+                                                            Web</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <!-- Slide 3 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/amyris-logo.png" alt="Amyris Consultance Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Assistant Stagiaire Projet</h3>
-                                                <h5 class="text-primary mb-3">01 Juin 2023 – 30 Août 2023 (3 mois)</h5>
-                                                <p class="mb-2 text-light small"><strong class="text-primary">Gestion:</strong> Assistance à la planification, suivi, reporting et rédaction des documents de projet.</p>
-                                                <p class="mb-3 text-light small"><strong class="text-primary">Formation:</strong> Accompagnement et initiation des jeunes entrepreneurs aux outils de gestion de projet.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> Amyris Consultance</span>
-                                                    <span><i class="fas fa-tasks text-primary"></i> Gestion de Projet</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <!-- Pagination -->
+                                <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center"
+                                    id="pagination-formation">
+                                    <button class="resume-dot active" aria-label="Slide 1"></button>
+                                    <button class="resume-dot" aria-label="Slide 2"></button>
+                                    <button class="resume-dot" aria-label="Slide 3"></button>
                                 </div>
-
-                                <!-- Slide 4 -->
-                                <div class="resume-slide w-100 flex-shrink-0">
-                                    <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                                <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white" style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
-                                                    <img src="./assets/images/portfolio/cnac-logo.jpeg" alt="CNAC Logo" style="width: 80%; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h3 class="mb-1 text-white">Stagiaire Dév. & Réseau</h3>
-                                                <h5 class="text-primary mb-3">25 Octobre 2022 – 24 Janvier 2023 (3 mois)</h5>
-                                                <p class="mb-2 text-light small"><strong class="text-primary">Développement:</strong> Création d’une application de gestion des stagiaires du centre.</p>
-                                                <p class="mb-3 text-light small"><strong class="text-primary">Réseau:</strong> Participation à la maintenance du réseau interne et aux activités techniques informatiques.</p>
-                                                <hr class="border-secondary my-3">
-                                                <div class="d-flex justify-content-between text-muted small">
-                                                    <span><i class="fas fa-map-marker-alt text-primary"></i> CNAC</span>
-                                                    <span><i class="fas fa-server text-primary"></i> IT & Réseau</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <!-- Pagination -->
-                            <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center" id="pagination-experience">
-                                <button class="resume-dot active" aria-label="Slide 1"></button>
-                                <button class="resume-dot" aria-label="Slide 2"></button>
-                                <button class="resume-dot" aria-label="Slide 3"></button>
-                                <button class="resume-dot" aria-label="Slide 4"></button>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                        <!-- EXPERIENCE TAB -->
+                        <div class="tab-pane-custom d-none" id="pane-experience">
+                            <div class="resume-slider" id="slider-experience">
+                                <div class="resume-slide-track d-flex transition-transform">
+
+                                    <!-- Slide 1 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle"
+                                                        style="width: 120px; height: 120px; background: #000; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/atos_digital_academy-removebg-preview.png"
+                                                            alt="ATOS Logo" style="width: 110%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Stagiaire Développeur FullStack</h3>
+                                                    <h5 class="text-primary mb-3">Juillet 2025 - Sept. 2025 (3 mois)
+                                                    </h5>
+                                                    <p class="mb-2 text-light small"><strong
+                                                            class="text-primary">Projets clés:</strong> VoteSmart
+                                                        (Front-End), AdaBank (PostgreSQL, DRF, JWT) et MonEtabl.</p>
+                                                    <p class="mb-3 text-light small"><strong class="text-primary">DevOps
+                                                            & Intégration:</strong> Docker, CI/CD GitLab, Kubernetes +
+                                                        ArgoCD, création d'APIs de liaison.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i>
+                                                            ATOS</span>
+                                                        <span><i class="fas fa-star text-primary"></i> Full-Stack &
+                                                            DevOps</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/Y3.jpeg" alt="Y3 Audit Logo"
+                                                            style="width: 80%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Stagiaire IT</h3>
+                                                    <h5 class="text-primary mb-3">15 Août 2024 – 15 Janvier 2025 (6
+                                                        mois)</h5>
+                                                    <p class="mb-2 text-light small"><strong
+                                                            class="text-primary">Développement:</strong> Conception et
+                                                        réalisation d’une application de génération automatique de
+                                                        lettres de mission.</p>
+                                                    <p class="mb-3 text-light small"><strong
+                                                            class="text-primary">Consulting:</strong> Participation aux
+                                                        activités du service consulting et soutien technique interne.
+                                                    </p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i> Y3
+                                                            Audit & Conseils</span>
+                                                        <span><i class="fas fa-desktop text-primary"></i> IT &
+                                                            Consulting</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/amyris-logo.png"
+                                                            alt="Amyris Consultance Logo"
+                                                            style="width: 80%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Assistant Stagiaire Projet</h3>
+                                                    <h5 class="text-primary mb-3">01 Juin 2023 – 30 Août 2023 (3 mois)
+                                                    </h5>
+                                                    <p class="mb-2 text-light small"><strong
+                                                            class="text-primary">Gestion:</strong> Assistance à la
+                                                        planification, suivi, reporting et rédaction des documents de
+                                                        projet.</p>
+                                                    <p class="mb-3 text-light small"><strong
+                                                            class="text-primary">Formation:</strong> Accompagnement et
+                                                        initiation des jeunes entrepreneurs aux outils de gestion de
+                                                        projet.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i> Amyris
+                                                            Consultance</span>
+                                                        <span><i class="fas fa-tasks text-primary"></i> Gestion de
+                                                            Projet</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="resume-slide w-100 flex-shrink-0">
+                                        <div class="resume-card p-4 p-md-5 mx-auto" style="max-width: 800px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                                    <div class="resume-logo mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white"
+                                                        style="width: 120px; height: 120px; border: 2px solid #444; overflow: hidden;">
+                                                        <img src="./assets/images/portfolio/cnac-logo.jpeg"
+                                                            alt="CNAC Logo" style="width: 80%; object-fit: contain;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3 class="mb-1 text-white">Stagiaire Dév. & Réseau</h3>
+                                                    <h5 class="text-primary mb-3">25 Octobre 2022 – 24 Janvier 2023 (3
+                                                        mois)</h5>
+                                                    <p class="mb-2 text-light small"><strong
+                                                            class="text-primary">Développement:</strong> Création d’une
+                                                        application de gestion des stagiaires du centre.</p>
+                                                    <p class="mb-3 text-light small"><strong
+                                                            class="text-primary">Réseau:</strong> Participation à la
+                                                        maintenance du réseau interne et aux activités techniques
+                                                        informatiques.</p>
+                                                    <hr class="border-secondary my-3">
+                                                    <div class="d-flex justify-content-between text-muted small">
+                                                        <span><i class="fas fa-map-marker-alt text-primary"></i>
+                                                            CNAC</span>
+                                                        <span><i class="fas fa-server text-primary"></i> IT &
+                                                            Réseau</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="resume-pagination mt-4 d-flex justify-content-center align-items-center"
+                                    id="pagination-experience">
+                                    <button class="resume-dot active" aria-label="Slide 1"></button>
+                                    <button class="resume-dot" aria-label="Slide 2"></button>
+                                    <button class="resume-dot" aria-label="Slide 3"></button>
+                                    <button class="resume-dot" aria-label="Slide 4"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -483,10 +573,10 @@
             <div class="tech-carousel">
                 <!-- WRAPPER CONTAINER -->
                 <div class="tech-carousel-wrapper">
-                    
+
                     <!-- TRACK -->
                     <div class="tech-carousel-track">
-                        
+
                         <!-- ITEM 1 -->
                         <div class="tech-item" data-tech="github">
                             <div class="tech-card">
@@ -603,7 +693,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- ITEM 10 -->
                         <div class="tech-item" data-tech="docker">
                             <div class="tech-card">
@@ -634,26 +724,25 @@
                         Mes <span class="services-accent">Services</span>
                     </h2>
                     <p class="services-description">
-                        Je vous accompagne dans la réalisation de vos projets digitaux de A à Z, en combinant design esthétique et développement robuste.
+                        Je vous accompagne dans la réalisation de vos projets digitaux de A à Z, en combinant design
+                        esthétique et développement robuste.
                     </p>
                 </div>
 
                 <!-- SERVICES GRID -->
                 <div class="services-grid">
-                    
+
                     <!-- SERVICE CARD 1: UI/UX Design -->
                     <div class="service-card" data-service-id="uiux-design">
                         <div class="service-image-wrapper">
-                            <img 
-                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=UI/UX+Design" 
-                                alt="UI/UX Design Services"
-                                class="service-image"
-                            >
+                            <img src="https://placehold.co/800x600/1e1e24/1a7bb7?text=UI/UX+Design"
+                                alt="UI/UX Design Services" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">UI/UX Design</h3>
                             <p class="service-description">
-                                Création d'interfaces utilisateur intuitives et design d'expérience utilisateur optimisée pour vos produits.
+                                Création d'interfaces utilisateur intuitives et design d'expérience utilisateur
+                                optimisée pour vos produits.
                             </p>
                         </div>
                         <div class="service-footer">
@@ -667,16 +756,14 @@
                     <div class="service-card service-card--featured" data-service-id="web-design">
                         <div class="service-badge">Featured</div>
                         <div class="service-image-wrapper">
-                            <img 
-                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Web+Design" 
-                                alt="Web Design Services"
-                                class="service-image"
-                            >
+                            <img src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Web+Design"
+                                alt="Web Design Services" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Web Design</h3>
                             <p class="service-description">
-                                Conception de sites web modernes, responsifs et performants avec les dernières technologies.
+                                Conception de sites web modernes, responsifs et performants avec les dernières
+                                technologies.
                             </p>
                         </div>
                         <div class="service-footer">
@@ -689,11 +776,8 @@
                     <!-- SERVICE CARD 3: Landing Page -->
                     <div class="service-card" data-service-id="landing-page">
                         <div class="service-image-wrapper">
-                            <img 
-                                src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Landing+Page" 
-                                alt="Landing Page Services"
-                                class="service-image"
-                            >
+                            <img src="https://placehold.co/800x600/1e1e24/1a7bb7?text=Landing+Page"
+                                alt="Landing Page Services" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Landing Page</h3>
@@ -718,15 +802,6 @@
 
         <!--Video Section START-->
 
-        <div class="section about_movie text-center d-flex flex-column align-items-center backgound-section"
-            style="background-image: url('/static/portfolio/video_bg.jpg')">
-            <div class="video-area">
-                <a href="https://www.youtube.com/watch?v=XXXXXXXXXXX" class="btn-video-play iframe_popup">
-                    <i class="fas fa-play"></i>
-                </a>
-                <p class="mt-3">Découvrez mon portfolio en vidéo</p>
-            </div>
-        </div>
 
 
         <!--Video Section END-->
@@ -745,169 +820,86 @@
                     </div>
                 </div>
                 <div class="section-content flex-grow-1">
-                    <div class="row portfolio-items">
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 frontenddevelopment">
-                            <div class="portfolio-item">
-                                <a href="https://via.placeholder.com/510x600" class="portfolio-single portfolio-image">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 1">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-photos"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                    <div class="projects-grid projects-featured-grid" data-aos="fade-up" data-aos-delay="180">
+                        <article class="project-card" data-service="uiux-design">
+                            <div class="project-card-media">
+                                <video class="project-card-video" autoplay muted loop playsinline preload="metadata"
+                                    aria-label="Aperçu vidéo Dashboard analytique">
+                                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <span class="project-video-badge"><i class="fas fa-play"></i></span>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 backenddevelopment">
-                            <div class="portfolio-item">
-                                <a href="https://www.youtube.com/watch?time_continue=85&v=oC1m-dTFX6g"
-                                    class="portfolio-single iframe_popup">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 2">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-video-play"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="project-card-body">
+                                <span class="project-card-tag">UI/UX Design</span>
+                                <h3 class="project-card-title">Dashboard analytique</h3>
+                                <p class="project-card-text">Refonte d'un tableau de bord avec parcours simplifié,
+                                    hiérarchie claire et composants réutilisables.</p>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 seo">
-                            <div class="portfolio-item">
-                                <a href="https://via.placeholder.com/510x600" class="portfolio-single portfolio-image">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 3">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-photos"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        </article>
+                        <article class="project-card" data-service="web-design">
+                            <div class="project-card-media">
+                                <video class="project-card-video" autoplay muted loop playsinline preload="metadata"
+                                    aria-label="Aperçu vidéo Site vitrine corporate">
+                                    <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+                                </video>
+                                <span class="project-video-badge"><i class="fas fa-play"></i></span>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 backenddevelopment">
-                            <div class="portfolio-item ">
-                                <a href="https://themeforest.net/" target="_blank" class="portfolio-single">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 4">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-link"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="project-card-body">
+                                <span class="project-card-tag">Web Design</span>
+                                <h3 class="project-card-title">Site vitrine corporate</h3>
+                                <p class="project-card-text">Interface responsive orientée crédibilité, performance et
+                                    lisibilité des offres.</p>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 frontenddevelopment">
-                            <div class="portfolio-item">
-                                <a href="https://via.placeholder.com/510x600" class="portfolio-single portfolio-image">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 5">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-photos"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        </article>
+                        <article class="project-card" data-service="landing-page">
+                            <div class="project-card-media">
+                                <video class="project-card-video" autoplay muted loop playsinline preload="metadata"
+                                    aria-label="Aperçu vidéo Page de lancement">
+                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                </video>
+                                <span class="project-video-badge"><i class="fas fa-play"></i></span>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-2 mt-4 frontenddevelopment">
-                            <div class="portfolio-item">
-                                <a href="https://via.placeholder.com/510x600" class="portfolio-single portfolio-image">
-                                    <div class="item-box">
-                                        <div class="item-image">
-                                            <img src="https://via.placeholder.com/510x600" width="510" height="600"
-                                                class="d-block img-fluid mx-auto" alt="Projet 6">
-                                        </div>
-                                        <div class="item-details d-flex align-items-center">
-                                            <div class="item-details-ins"></div>
-                                            <div class="item-details-ins text-center w-100">
-                                                <div class="mb-2">
-                                                    <span class="mbri-photos"></span>
-                                                </div>
-                                                <h3>Titre du projet</h3>
-                                                <p>Catégorie</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="project-card-body">
+                                <span class="project-card-tag">Landing Page</span>
+                                <h3 class="project-card-title">Page de lancement</h3>
+                                <p class="project-card-text">Landing page structurée autour d'une proposition de valeur
+                                    forte et d'un appel à l'action clair.</p>
                             </div>
-                        </div>
+                        </article>
                     </div>
                     <div class="row">
                         <div class="col-12 text-center mt-5">
-                            <a href="#" class="btn btn-outline-primary"><span><i class="fab fa-dribbble"></i></span>
-                                Voir plus</a>
+                            <a href="projects.html" class="project-more-link" aria-label="Voir tous les projets">
+                                <span class="project-more-icon"><i class="fas fa-layer-group"></i></span>
+                                <span>Voir tous les projets</span>
+                                <i class="fas fa-arrow-right project-more-arrow"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!--PORTFOLIO SECTION START-->
-        <!--PROJECT Section START-->
-        <div class="section project background-section"
-            style="background-image: url(https://via.placeholder.com/1920x1080)">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row box p-5 mx-3 mx-md-0 align-items-center text-center">
-                            <div class="col-md-4 m-0 mb-3 mb-md-0">
-                                <h3 class="m-0">Create a Website</h3>
-                            </div>
-                            <div class="col-md-4 m-0 mb-3 mb-md-0">
-                                <p class="m-0">We can create and develop together.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#contact" class="btn btn-outline-primary">Let's do this</a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="project-video-modal" aria-hidden="true">
+            <div class="project-video-modal-backdrop" data-project-modal-close></div>
+            <div class="project-video-dialog" role="dialog" aria-modal="true" aria-labelledby="project-video-title">
+                <button class="project-video-close" type="button" aria-label="Fermer la vidéo" data-project-modal-close>
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="project-video-frame">
+                    <video class="project-video-player" controls playsinline></video>
+                </div>
+                <div class="project-video-info">
+                    <span class="project-video-tag"></span>
+                    <h2 id="project-video-title" class="project-video-title"></h2>
+                    <p class="project-video-text"></p>
                 </div>
             </div>
         </div>
+        <!--PROJECT Section START-->
         <!--PROJECT Section END-->
-        
+
         <!--CLIENT SECTION START-->
         <div class="section testimonial backgound-section"
             style="background-image: url(https://via.placeholder.com/1920x1080)">
@@ -1012,7 +1004,7 @@
         </div>
         <!--CLIENT SECTION END-->
         <!--BLOG SECTION START-->
-        
+
         <!--BLOG SECTION START-->
         <!--CONTACT SECTION START-->
         <section class="contact" id="contact">
@@ -1128,33 +1120,28 @@
                         <div class="text-center">
                             <ul class="social-icons list-inline mt-5">
                                 <li class="list-inline-item">
-                                    <a href="#">
+                                    <a class="social-facebook" href="https://www.facebook.com/irwin.jess.1"
+                                        target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">
+                                    <a class="social-linkedin" href="https://www.linkedin.com/in/irwin-djriga/"
+                                        target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-pinterest-p"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-git"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-tumblr"></i>
+                                    <a class="social-whatsapp"
+                                        href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j'aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration."
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-whatsapp"></i>
                                     </a>
                                 </li>
                             </ul>
                             <p class="copyright-text mt-3 mb-5">2021 ©. RectCV Template. Developed and Designed by
-                                <b>themesuccess</b></p>
+                                <b>themesuccess</b>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1190,6 +1177,7 @@
     <script src="./assets/js/portfolio/resume-slider.js"></script>
     <script src="./assets/js/portfolio/tech-stack.js"></script>
     <script src="./assets/js/portfolio/services.js"></script>
+    <script src="./assets/js/portfolio/projects.js"></script>
 </body>
 
 </html>
