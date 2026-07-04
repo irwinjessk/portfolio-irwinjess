@@ -45,7 +45,31 @@
 }
 
 .resume-slide-track {
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    transition: transform 0.82s cubic-bezier(0.22, 1, 0.36, 1);
+    padding-bottom: 20px;
+}
+
+.resume-slider {
+    position: relative;
+}
+
+.resume-slide {
+    opacity: 0.42;
+    transform: scale(0.965);
+    filter: saturate(0.82);
+    transition: opacity 0.62s ease, transform 0.82s cubic-bezier(0.22, 1, 0.36, 1), filter 0.62s ease;
+    will-change: opacity, transform;
+}
+
+.resume-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+    filter: saturate(1);
+}
+
+.resume-slider.is-sliding .resume-card {
+    pointer-events: none;
 }
 
 .resume-card {
@@ -58,10 +82,10 @@
 }
 
 .resume-card:hover {
-    transform: translateY(-8px);
-    background: rgba(26, 123, 183, 0.08); /* Slightly more visible on hover */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(26, 123, 183, 0.5);
+    transform: translateY(-5px);
+    background: rgba(26, 123, 183, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    border-color: rgba(26, 123, 183, 0.4);
 }
 
 .resume-dot {
@@ -74,6 +98,10 @@
     padding: 0;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.resume-dot:disabled {
+    cursor: default;
 }
 
 .resume-dot:hover {
@@ -103,5 +131,17 @@
     to { 
         opacity: 1; 
         transform: translateY(0); 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .resume-tab,
+    .resume-slide-track,
+    .resume-slide,
+    .resume-card,
+    .resume-dot,
+    .tab-pane-custom {
+        animation: none !important;
+        transition: none !important;
     }
 }

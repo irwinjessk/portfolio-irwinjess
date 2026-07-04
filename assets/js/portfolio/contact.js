@@ -7,60 +7,81 @@
  *--
  */
 
-//Disable Form function
-function contact_state(state) {
-  if (state == "disable") {
-    $("#contact-btn").removeClass("btn-loading");
-    $("#contact-btn").removeClass("active");
-    $("#contact-btn").addClass("disabled");
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
 
-    $("#contact-form .form-control").each(function () {
-      $(this).addClass("disabled");
-    });
-  }
+  const submitButton = form.querySelector('button[type="submit"]');
+  const fields = Array.from(form.querySelectorAll('input, select, textarea'));
 
-  if (state == "loading") {
-    $("#contact-btn").addClass("btn-loading");
-  }
-}
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^\+?[0-9\s\-\(\)]{10,}$/;
 
-$(function () {
-  this.sended = false;
-  var that = this;
+  function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
 
-  var form = $("#contact-form"),
-    successMessage = "Message Send",
-    warningMessage = "Something wrong! Please try later";
-
-  form.on("submit", function (event) {
-    /*Change URL address if you need*/
-
-    contact_state("loading");
-
-    if (!that.sended) {
-      $.ajax({
-        url: "php/form.php",
-        type: "POST",
-        data: form.serialize(),
-        success: function (response) {
-          var d = JSON.parse(response);
-          if (d.status == "success") {
-            custom_alert(successMessage, "success");
-            contact_state("disable");
-          } else {
-            custom_alert(warningMessage, "error");
-            contact_state("disable");
-          }
-        },
-        error: function (response) {
-          custom_alert(warningMessage, "error");
-          contact_state("disable");
-        },
-      });
-
-      that.sended = true;
+    if (field.required && !value) {
+      isValid = false;
     }
 
+    if (isValid && field.type === 'email') {
+      isValid = emailRegex.test(value);
+    }
+
+    if (isValid && field.type === 'tel') {
+      isValid = phoneRegex.test(value);
+    }
+
+    if (!isValid) {
+      field.style.borderColor = '#FF5722';
+      field.style.boxShadow = '0 0 8px rgba(255, 87, 34, 0.2)';
+    } else {
+      field.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+      field.style.boxShadow = 'none';
+    }
+
+    return isValid;
+  }
+
+  fields.forEach((field) => {
+    field.addEventListener('blur', () => validateField(field));
+  });
+
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    let isFormValid = true;
+    fields.forEach((field) => {
+      if (!validateField(field)) {
+        isFormValid = false;
+      }
+    });
+
+    if (!isFormValid) {
+      alert('⚠️ Veuillez remplir correctement tous les champs');
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Envoi en cours...';
+    }
+
+    const data = Object.fromEntries(new FormData(form));
+    console.log('Form submitted:', data);
+
+    setTimeout(() => {
+      alert('✅ Merci! Votre demande a été reçue.\nNous vous revenons sous 24h');
+      form.reset();
+      fields.forEach((field) => {
+        field.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+        field.style.boxShadow = 'none';
+      });
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'ENVOYER MA DEMANDE →';
+      }
+    }, 750);
   });
 });

@@ -34,20 +34,58 @@ document.addEventListener('DOMContentLoaded', function() {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
         const track = slider.querySelector('.resume-slide-track');
-        const dots = document.getElementById(paginationId).querySelectorAll('.resume-dot');
+        const pagination = document.getElementById(paginationId);
+        if (!track || !pagination) return;
+
+        const slides = Array.from(slider.querySelectorAll('.resume-slide'));
+        const dots = Array.from(pagination.querySelectorAll('.resume-dot'));
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const slideDuration = prefersReducedMotion ? 0 : 820;
         let currentIndex = 0;
+        let isSliding = false;
+        let animationTimer = null;
+
+        const setSlidingState = (nextState) => {
+            slider.classList.toggle('is-sliding', nextState);
+            dots.forEach(dot => {
+                dot.disabled = nextState;
+            });
+        };
+
+        const updateActiveState = () => {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('is-active', i === currentIndex);
+                slide.setAttribute('aria-hidden', i === currentIndex ? 'false' : 'true');
+            });
+
+            dots.forEach((dot, i) => {
+                const isActive = i === currentIndex;
+                dot.classList.toggle('active', isActive);
+                if (isActive) {
+                    dot.setAttribute('aria-current', 'true');
+                } else {
+                    dot.removeAttribute('aria-current');
+                }
+            });
+        };
 
         const goToSlide = (index) => {
-            if (index < 0 || index >= dots.length) return;
+            if (isSliding || index < 0 || index >= slides.length || index === currentIndex) return;
             currentIndex = index;
-            
-            // Déplacer le track
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            
-            // Mettre à jour les points
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
+
+            window.clearTimeout(animationTimer);
+            isSliding = true;
+            setSlidingState(isSliding);
+            updateActiveState();
+
+            requestAnimationFrame(() => {
+                track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
             });
+
+            animationTimer = window.setTimeout(() => {
+                isSliding = false;
+                setSlidingState(isSliding);
+            }, slideDuration);
         };
 
         dots.forEach((dot, i) => {
@@ -66,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+
+        updateActiveState();
     };
 
     setupSlider('slider-formation', 'pagination-formation');
