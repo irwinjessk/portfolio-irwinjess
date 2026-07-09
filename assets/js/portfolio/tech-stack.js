@@ -1,25 +1,28 @@
-// Tech Stack Carousel Logic
+// Tech Stack Infinite Carousel Logic
 class TechCarousel {
     constructor() {
         this.track = document.querySelector('.tech-carousel-track');
         if (!this.track) return;
         
-        this.items = document.querySelectorAll('.tech-item:not([aria-hidden="true"])');
-        this.allItems = document.querySelectorAll('.tech-item');
+        this.originalItems = Array.from(document.querySelectorAll('.tech-item'));
+        if (this.originalItems.length === 0) return;
+        
         this.wrapper = document.querySelector('.tech-carousel-wrapper');
         this.carousel = document.querySelector('.tech-carousel');
         this.prevBtn = document.querySelector('.tech-nav-prev');
         this.nextBtn = document.querySelector('.tech-nav-next');
         
-        this.itemWidth = 140; // item width + gap
+        this.itemWidth = 140;
         this.gap = 24;
         this.step = this.itemWidth + this.gap;
-        this.originalCount = this.items.length;
-        this.currentIndex = 0;
+        this.originalCount = this.originalItems.length;
+        this.currentX = 0;
         this.isAnimating = false;
         this.autoScrollPaused = false;
         this.autoScrollResumeTimer = null;
         this.AUTO_RESUME_DELAY = 4000;
+        this.autoScrollSpeed = 0.6;
+        this.rafId = null;
         
         this.init();
     }
@@ -31,32 +34,30 @@ class TechCarousel {
         this.addKeyboardNav();
         this.addTouchSwipe();
         this.updateButtonState();
+        this.startAutoScroll();
     }
 
     cloneItems() {
-        const fragment = document.createDocumentFragment();
-        
-        this.items.forEach(item => {
-            const clone = item.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            fragment.appendChild(clone);
-        });
-        
-        this.track.appendChild(fragment);
-        
+        const fragment1 = document.createDocumentFragment();
         const fragment2 = document.createDocumentFragment();
-        this.items.forEach(item => {
-            const clone = item.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            fragment2.appendChild(clone);
+        
+        this.originalItems.forEach(item => {
+            const clone1 = item.cloneNode(true);
+            clone1.setAttribute('aria-hidden', 'true');
+            fragment1.appendChild(clone1);
+            
+            const clone2 = item.cloneNode(true);
+            clone2.setAttribute('aria-hidden', 'true');
+            fragment2.appendChild(clone2);
         });
+        
+        this.track.appendChild(fragment1);
         this.track.appendChild(fragment2);
     }
 
-addHoverPause() {
+    addHoverPause() {
         if (!this.wrapper) return;
         
-        // Pause on wrapper hover (for buttons visibility + carousel pause)
         this.wrapper.addEventListener('mouseenter', () => {
             this.pauseAutoScroll();
         });
@@ -65,31 +66,12 @@ addHoverPause() {
             this.scheduleAutoResume();
         });
         
-        // Pause on card hover (event delegation on track)
         this.track.addEventListener('mouseenter', (e) => {
             const card = e.target.closest('.tech-card');
             if (card) {
                 this.pauseAutoScroll();
             }
-        }, true); // capture phase to catch before wrapper
-        
-        this.track.addEventListener('mouseleave', (e) => {
-            const card = e.target.closest('.tech-card');
-            if (card) {
-                this.scheduleAutoResume();
-            }
         }, true);
-    }
-        }, true); // capture phase to catch before wrapper
-        
-        this.track.addEventListener('mouseleave', (e) => {
-            const card = e.target.closest('.tech-card');
-            if (card) {
-                this.scheduleAutoResume();
-            }
-        }, true);
-    }
-        }, true); // capture phase to catch before wrapper
         
         this.track.addEventListener('mouseleave', (e) => {
             const card = e.target.closest('.tech-card');
@@ -151,56 +133,68 @@ addHoverPause() {
         }, { passive: true });
     }
 
+    startAutoScroll() {
+        if (this.rafId) cancelAnimationFrame(this.rafId);
+        
+        const tick = () => {
+            if (!this.autoScrollPaused) {
+                this.currentX -= this.autoScrollSpeed;
+                this.applyTransform(false);
+                this.checkBounds();
+            }
+            this.rafId = requestAnimationFrame(tick);
+        };
+        
+        this.rafId = requestAnimationFrame(tick);
+    }
+
+    applyTransform(animate = true) {
+        if (animate) {
+            this.track.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+        } else {
+            this.track.style.transition = 'none';
+        }
+        this.track.style.transform = `translateX(${this.currentX}px)`;
+    }
+
+    checkBounds() {
+        const limit = this.originalCount * this.step;
+        const min = -limit * 2;
+        const max = 0;
+        
+        if (this.currentX <= min) {
+            this.currentX += limit;
+            this.applyTransform(false);
+        } else if (this.currentX > max) {
+            this.currentX -= limit;
+            this.applyTransform(false);
+        }
+    }
+
     navigate(direction) {
         if (this.isAnimating) return;
         
         this.isAnimating = true;
         this.pauseAutoScroll();
         
-        const targetIndex = this.currentIndex + direction;
-        
-        this.track.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
-        this.track.style.transform = `translateX(${targetIndex * -this.step}px)`;
-        
-        this.currentIndex = targetIndex;
+        this.currentX += direction * -this.step;
+        this.applyTransform(true);
         
         setTimeout(() => {
-            this.checkBoundsAndReset();
+            this.checkBounds();
             this.isAnimating = false;
             this.updateButtonState();
             this.scheduleAutoResume();
         }, 500);
     }
 
-    checkBoundsAndReset() {
-        const maxIndex = this.originalCount * 2;
-        const minIndex = -this.originalCount;
-        
-        if (this.currentIndex >= maxIndex) {
-            this.track.style.transition = 'none';
-            this.currentIndex -= this.originalCount;
-            this.track.style.transform = `translateX(${this.currentIndex * -this.step}px)`;
-        } else if (this.currentIndex <= minIndex) {
-            this.track.style.transition = 'none';
-            this.currentIndex += this.originalCount;
-            this.track.style.transform = `translateX(${this.currentIndex * -this.step}px)`;
-        }
-        
-        // Force reflow
-        this.track.offsetHeight;
-    }
-
     updateButtonState() {
-        // Buttons always enabled for infinite carousel
         if (this.prevBtn) this.prevBtn.disabled = false;
         if (this.nextBtn) this.nextBtn.disabled = false;
     }
 
     pauseAutoScroll() {
         this.autoScrollPaused = true;
-        if (this.track) {
-            this.track.style.animationPlayState = 'paused';
-        }
         this.clearResumeTimer();
     }
 
@@ -221,9 +215,6 @@ addHoverPause() {
     resumeAutoScroll() {
         if (!this.autoScrollPaused) return;
         this.autoScrollPaused = false;
-        if (this.track) {
-            this.track.style.animationPlayState = 'running';
-        }
     }
 }
 
