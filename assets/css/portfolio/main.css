@@ -173,6 +173,12 @@ section .section-title,
 div.section .section-title {
   position: relative;
   margin-bottom: 3rem;
+  text-align: center;
+}
+
+section .section-title p,
+div.section .section-title p {
+  text-align: center;
 }
 
 section .section-title h2.rect_heading,
@@ -184,6 +190,8 @@ div.section .section-title h2.rect_heading {
   display: inline-block;
   position: relative;
   height: 72px;
+  line-height: 40px;
+  text-align: center;
   -webkit-transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
   transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
 }
