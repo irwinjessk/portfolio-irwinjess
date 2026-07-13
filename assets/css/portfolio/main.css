@@ -1295,6 +1295,15 @@ input.form-control {
   background: #060c15;
 }
 
+.footer-brand {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: repeat(4, minmax(180px, 1fr));

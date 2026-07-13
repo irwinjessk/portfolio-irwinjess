@@ -109,7 +109,7 @@ $(window).on("load", function(){
             })
 
         });
-    })
+    });
 
     //Parallax
 
@@ -231,23 +231,6 @@ $(window).on("load", function(){
         
     });
 
-    // Return to top button
-
-    $(window).scroll(function(){
-        if($(this).scrollTop() >= 350) {
-            $('#return-to-top').fadeIn(200);
-        } else {
-            $('#return-to-top').fadeOut(200);
-        }
-    });
-
-    $('#return-to-top').on('click', function() {
-        event.preventDefault();
-        $('body,html').animate({
-            scrollTop : 0
-        }, 1500, 'easeInOutQuad');
-    });
-
     // OWL Carousel
 
     $('#client_slider').owlCarousel({
@@ -267,4 +250,24 @@ $(window).on("load", function(){
 
     
 
+});
+
+// Return to top button
+
+function toggleReturnToTop() {
+    if ($(window).scrollTop() >= 350) {
+        $('#return-to-top').fadeIn(200);
+    } else {
+        $('#return-to-top').fadeOut(200);
+    }
+}
+
+$(window).on('scroll resize', toggleReturnToTop);
+toggleReturnToTop();
+
+$('#return-to-top').on('click', function(e) {
+    e.preventDefault();
+    $('body,html').animate({
+        scrollTop : 0
+    }, 1500, 'easeInOutQuad');
 });
