@@ -27,16 +27,40 @@ body.project-modal-open .toTop {
 
 .projects-title {
     color: #ffffff;
-    font-size: clamp(40px, 5vw, 58px);
-    font-weight: 800;
-    line-height: 1.12;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 500;
+    line-height: 1.1;
     margin-bottom: 18px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.projects-title.rect_heading {
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    padding: 16px;
+    margin: 0 0 16px 0;
+    height: 72px;
+    line-height: 40px;
+    text-align: center;
+    transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
+}
+
+.projects-title.rect_heading:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+    right: -5px;
+    background-color: #1a7bb7;
+    transition: inherit;
 }
 
 .projects-description {
     max-width: 760px;
     margin: 0 auto;
-    color: #a0a9c9;
+    color: #ffffff;
     font-size: 17px;
     line-height: 1.8;
 }

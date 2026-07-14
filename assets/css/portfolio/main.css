@@ -1296,12 +1296,22 @@ input.form-control {
 }
 
 .footer-brand {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.footer-accent {
+    color: #ffffff;
 }
 
 .footer-content {
