@@ -384,7 +384,6 @@ body.project-modal-open .toTop {
     max-height: calc(100vh - 56px);
     position: relative;
     z-index: 1;
-    overflow: hidden;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     background: rgba(18, 21, 29, 0.96);
@@ -408,7 +407,7 @@ body.project-modal-open .toTop {
     position: absolute;
     top: 16px;
     right: 16px;
-    z-index: 2;
+    z-index: 10;
     color: #ffffff;
     background: rgba(17, 17, 17, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -426,8 +425,20 @@ body.project-modal-open .toTop {
 }
 
 .project-video-frame {
+    position: relative;
     aspect-ratio: 16 / 9;
     background: #05080e;
+    overflow: hidden;
+}
+
+.project-video-frame iframe,
+.project-video-frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 1;
 }
 
 .project-video-player {
@@ -474,6 +485,38 @@ body.project-modal-open .toTop {
     margin: 0;
 }
 
+.projects-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projects-breadcrumb a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.28s ease;
+}
+
+.projects-breadcrumb a:hover {
+    color: #1a7bb7;
+}
+
+.projects-breadcrumb .breadcrumb-current {
+    color: rgba(255, 255, 255, 0.45);
+    pointer-events: none;
+    cursor: default;
+}
+
+.projects-breadcrumb .breadcrumb-sep {
+    opacity: 0.55;
+}
+
 @keyframes projectsReveal {
     from {
         opacity: 0;
@@ -518,44 +561,6 @@ body.project-modal-open .toTop {
 }
 
 @media (max-width: 575px) {
-    .projects-page {
-        padding: 110px 0 72px;
-    }
-
-    .projects-title {
-        font-size: 36px;
-    }
-
-    .projects-description {
-        font-size: 16px;
-        line-height: 1.75;
-    }
-
-    .projects-filter {
-        gap: 8px;
-        padding: 8px;
-        margin-bottom: 34px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .project-filter-btn {
-        width: 100%;
-        min-height: 44px;
-    }
-
-    .project-card-body {
-        padding: 22px 20px;
-    }
-
-    .project-page-dot {
-        width: 40px;
-        height: 40px;
-    }
-
     .project-video-modal {
         padding: 14px;
     }
@@ -563,6 +568,22 @@ body.project-modal-open .toTop {
     .project-video-dialog {
         max-height: calc(100vh - 28px);
         border-radius: 14px;
+    }
+
+    .project-video-frame {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background: #05080e;
+    }
+
+    .project-video-frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 
     .project-video-close {
