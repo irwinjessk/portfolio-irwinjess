@@ -503,7 +503,7 @@ section.home .mono-background .mono-background-inner img.img-align-left {
     3. HEADER
 ==================*/
 /* 3.1 General Header Style */
-header {
+header.navigation {
   z-index: 1000;
   position: fixed;
   top: 0;

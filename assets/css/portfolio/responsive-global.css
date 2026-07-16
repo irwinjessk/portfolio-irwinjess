@@ -640,60 +640,231 @@ section.home .scroll-down .scroll-mouse {
 }
 
 /* --------------------------------------------------------------------------
-   About
+   About — UI/UX sobre (aligné hero)
    -------------------------------------------------------------------------- */
 
-section.about h3 {
-  font-size: clamp(1.5rem, 4vw, 2em);
-  text-align: center;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2.25rem);
+  align-items: start;
 }
 
-section.about .avatar-area {
-  max-width: min(100%, 320px);
+.about-avatar {
+  margin: 0 auto;
+  width: min(100%, 260px);
 }
 
-section.about .about-info {
-  text-align: center;
-}
-
-section.about .button_and_social .btn-lg {
+.about-photo {
   width: 100%;
-  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.about-identity {
+  text-align: center;
+}
+
+.about-name {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.2rem, 4.2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.about-role {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+  font-weight: 500;
+  color: #4fa3d1;
+}
+
+.about-bio p {
+  margin: 0 0 0.85rem;
+  font-size: clamp(0.92rem, 2.7vw, 1rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.76);
+  text-align: left;
+}
+
+.about-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.about-link {
+  color: #4fa3d1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.about-link:hover,
+.about-link:focus {
+  color: #ffffff;
+}
+
+.about-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.about-details li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-details li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-details-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.about-details-value {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: #f2f6fb;
+  word-break: break-word;
+}
+
+.about-details-link {
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.about-details-link:hover,
+.about-details-link:focus {
+  color: #4fa3d1;
+}
+
+.about-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  padding-top: 0.15rem;
+}
+
+.about-cv-btn {
+  width: 100%;
+  max-width: 300px;
+}
+
+.about-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.about-social .list-inline-item {
+  margin: 0 !important;
+}
+
+.about-social li a {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+}
+
+.about-social li a:hover,
+.about-social li a:focus {
+  transform: translateY(-2px);
+}
+
+@media (min-width: 576px) {
+  .about-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+  }
+
+  .about-details li {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .about-avatar {
+    width: min(100%, 280px);
+  }
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  .about-avatar {
+    margin: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about-identity,
+  .about-bio p {
+    text-align: left;
+  }
+
+  .about-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .about-cv-btn {
+    width: auto;
+    max-width: none;
+    flex: 0 1 auto;
+  }
+
+  .about-social {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 575.98px) {
-  section.about .avatar-area {
-    max-width: min(100%, 260px);
-  }
-
-  section.about .social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 0 !important;
-  }
-
-  section.about .social-icons .list-inline-item {
-    margin: 0 !important;
+  .about-avatar {
+    width: min(100%, 220px);
   }
 }
 
 /* --------------------------------------------------------------------------
-   Parcours (compléments — détails dans resume-slider.css)
+   Parcours — compléments (détails dans resume-slider.css)
    -------------------------------------------------------------------------- */
 
-section.parcours .resume-tabs-container {
-  margin-top: 2rem !important;
-  padding-top: 2rem !important;
-}
-
-@media (max-width: 767.98px) {
-  section.parcours .resume-card .d-flex.justify-content-between {
-    flex-direction: column;
-    align-items: flex-start !important;
-    gap: 8px;
-  }
+section.parcours .section-title {
+  margin-bottom: 0;
 }
 
 /* --------------------------------------------------------------------------
