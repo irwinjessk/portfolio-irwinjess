@@ -12,9 +12,9 @@ class TechCarousel {
         this.prevBtn = document.querySelector('.tech-nav-prev');
         this.nextBtn = document.querySelector('.tech-nav-next');
         
-        this.itemWidth = 140;
+        this.itemWidth = 0;
         this.gap = 24;
-        this.step = this.itemWidth + this.gap;
+        this.step = 0;
         this.originalCount = this.originalItems.length;
         this.currentX = 0;
         this.isAnimating = false;
@@ -29,23 +29,69 @@ class TechCarousel {
 
     init() {
         this.cloneItems();
+        this.measureStep();
         this.addHoverPause();
         this.addTouchCards();
         this.addNavigation();
         this.addKeyboardNav();
         this.addTouchSwipe();
+        this.addResizeHandler();
         this.updateButtonState();
         this.startAutoScroll();
+    }
+
+    measureStep() {
+        const firstItem = this.originalItems[0];
+        if (!firstItem) return;
+
+        const trackStyles = getComputedStyle(this.track);
+        const gap = parseFloat(trackStyles.gap) || 24;
+        const width = firstItem.getBoundingClientRect().width;
+
+        this.gap = gap;
+        this.itemWidth = width;
+        this.step = width + gap;
+    }
+
+    addResizeHandler() {
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const previousStep = this.step || 1;
+                this.measureStep();
+                if (previousStep !== this.step) {
+                    this.currentX = (this.currentX / previousStep) * this.step;
+                    this.applyTransform(false);
+                    this.checkBounds();
+                }
+            }, 120);
+        });
     }
 
     addTouchCards() {
         this.track.addEventListener('click', (e) => {
             const card = e.target.closest('.tech-card');
-            if (!card || !window.matchMedia('(max-width: 767.98px)').matches) return;
+            if (!card) return;
 
-            const cards = this.track.querySelectorAll('.tech-card:not([aria-hidden="true"])');
-            cards.forEach((item) => item.classList.remove('is-touched'));
-            card.classList.add('is-touched');
+            const item = card.closest('.tech-item');
+            if (item?.getAttribute('aria-hidden') === 'true') return;
+
+            const cards = this.track.querySelectorAll('.tech-item:not([aria-hidden="true"]) .tech-card');
+            const wasActive = card.classList.contains('is-touched');
+            cards.forEach((entry) => entry.classList.remove('is-touched'));
+            if (!wasActive) {
+                card.classList.add('is-touched');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.tech-carousel-track') || e.target.closest('.tech-nav-btn')) {
+                return;
+            }
+            this.track.querySelectorAll('.tech-card.is-touched').forEach((card) => {
+                card.classList.remove('is-touched');
+            });
         });
     }
 
