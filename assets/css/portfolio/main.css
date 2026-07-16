@@ -379,18 +379,35 @@ section.home .mono-background .mono-background-inner img.img-align-left {
 /* 2.3 SOCIAL ICONS */
 .social-icons {
   margin: 0;
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
 }
 
 .social-icons li a {
-  display: block;
-  width: 40px;
-  height: 40px;
-  font-size: 1em;
-  line-height: 40px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 1.1em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--gray-400, #94a3b8);
   -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons li a:hover {
+  color: #FFFFFF;
+}
+
+.social-icons li a.social-github:hover {
+  background-color: #333333;
+  border-color: #333333;
+  color: #FFFFFF;
 }
 
 .social-icons li a.social-linkedin:hover {
@@ -412,7 +429,7 @@ section.home .mono-background .mono-background-inner img.img-align-left {
 }
 
 .social-icons .list-inline-item:not(:last-child) {
-  margin-right: 5px;
+  margin-right: 0;
 }
 
 /* 2.4 OWL SLIDER */

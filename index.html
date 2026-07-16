@@ -56,6 +56,12 @@
     <!--Projects CSS-->
     <link rel="stylesheet" href="./assets/css/portfolio/projects.css" as="style"
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <!--Contact Styles CSS-->
+    <link rel="stylesheet" href="./assets/css/portfolio/contact.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <!-- International Telephone Input -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.16/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.16/build/js/intlTelInput.min.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="85">
@@ -102,7 +108,7 @@
                         <a href="#myservices" class="nav-link">Services</a>
                     </li>
                     <li>
-                        <a href="#portfolio" class="nav-link">Projets</a>
+                        <a href="#projects" class="nav-link">Projets</a>
                     </li>
 
                     <li>
@@ -833,10 +839,10 @@
                 </div>
 
                 <!-- SERVICES GRID -->
-                <div class="services-grid">
+                <div class="services-grid row">
 
                     <!-- SERVICE CARD 1: Automatisation -->
-                    <div class="service-card" data-service-id="automation" data-aos="fade-left" data-aos-delay="100">
+                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="automation" data-aos="fade-left" data-aos-delay="100">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Manufacturing Process-amico12.png"
                                 alt="Automatisation" class="service-image">
@@ -856,7 +862,7 @@
                     </div>
 
                     <!-- SERVICE CARD 2: Maintenance informatique -->
-                    <div class="service-card" data-service-id="maintenance" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="maintenance" data-aos="fade-up" data-aos-delay="200">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Computer troubleshooting-amico.png"
                                 alt="Maintenance informatique" class="service-image">
@@ -876,7 +882,7 @@
                     </div>
 
                     <!-- SERVICE CARD 3: Applications sur mesure -->
-                    <div class="service-card service-card--featured" data-service-id="applications" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card service-card--featured col-12 col-md-6 col-lg-3" data-service-id="applications" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/App development-amico.png"
                                 alt="Applications" class="service-image">
@@ -896,7 +902,7 @@
                     </div>
 
                     <!-- SERVICE CARD 4: Formation -->
-                    <div class="service-card" data-service-id="formation" data-aos="fade-right" data-aos-delay="400">
+                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="formation" data-aos="fade-right" data-aos-delay="400">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Online-Review-amico.svg"
                                 alt="Formation" class="service-image">
@@ -1111,149 +1117,203 @@
         <!--BLOG SECTION START-->
 
         <!--BLOG SECTION START-->
-        <!--CONTACT SECTION START-->
-        <section class="contact" id="contact">
-            <div class="container d-flex flex-column justify-content-between h-100 ">
-                <div class="section-title flex-grow-1">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <h2 data-aos="heading-show" class="rect_heading">Get in Touch</h2>
-                                <p class="m-0">It is a long established fact that a reader will be distracted by the
-                                    readable content</p>
-                            </div>
+<!--CONTACT SECTION START-->
+        <section class="contact-section-ux">
+            <!-- Header Section -->
+            <div class="contact-header">
+                <div class="header-leadership">
+                    <h2>TRAVAILLONS ENSEMBLE</h2>
+                    <h2 class="devis-title">DEMANDE DE <span class="title-accent">DEVIS</span></h2>
+                    <p class="subtitle-shadow">Remplissez le formulaire ci-dessous ou contactez-nous directement. Notre équipe vous revient sous <strong>24 heures ouvrées</strong></p>
+                </div>
+                <div class="texture-gradient">
+                    <div class="texture-multidiv"></div>
+                    <div class="texture-ikrdiv"></div>
+                    <div class="texture-3ddiv"></div>
+                </div>
+            </div>
+
+            <!-- Contact Layout: 2 Columns -->
+            <div class="contact-layout">
+                <!-- Contact Infos (Left) -->
+                <div class="contact-info-section">
+                    <div class="contact-info-item">
+                        <div class="contact-icon phone-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-info-content">
+                            <span class="contact-label">TÉLÉPHONE</span>
+                            <p class="contact-value">+225 0506561623</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon email-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info-content">
+                            <span class="contact-label">EMAIL</span>
+                            <p class="contact-value">irwindjriga@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon whatsapp-icon"><i class="fas fa-comments"></i></div>
+                        <div class="contact-info-content">
+                            <span class="contact-label">WHATSAPP</span>
+                            <p class="contact-value">+225 0506561623</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info-content">
+                            <span class="contact-label">ADRESSE</span>
+                            <p class="contact-value">Abidjan, yopougon cité verte</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="section-content flex-grow-1">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div
-                                class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
-                                <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
-                                    <span class="mbri-letter"></span>
-                                </div>
-                                <div class="contact-details mt-2">
-                                    <h5>Email Us</h5>
-                                    <p><a href="mailto:kevinmiller@alb.com">kevinmiller@alb.com</a></p>
-                                </div>
+                <!-- Contact Form (Right) -->
+                <div class="contact-form-section">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <!-- Row 1: Nom/Entreprise -->
+                        <div class="form-group full-width">
+                            <label for="name">NOM OU ENTREPRISE *</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: SpaceX ou Dupont Jean" required>
+                        </div>
+
+                        <!-- Row 2: Phone & Email -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">TÉLÉPHONE *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="07 XX XX XX XX" autocomplete="tel" required>
+                                <small class="form-help-text">Sélectionnez votre pays dans la liste déroulante</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">EMAIL *</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div
-                                class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
-                                <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
-                                    <span class="mbri-mobile"></span>
-                                </div>
-                                <div class="contact-details mt-2">
-                                    <h5>Call</h5>
-                                    <p><a href="tel:+1000123456789">+1 xxx-888-7887</a></p>
-                                </div>
-                            </div>
+
+                        <!-- Row 3: Type de besoin -->
+                        <div class="form-group full-width">
+                            <label for="needType">TYPE DE BESOIN *</label>
+                            <select id="needType" name="needType" required>
+                                <option value="">Sélectionner un type de besoin...</option>
+                                <option value="automatisation">Automatisation</option>
+                                <option value="maintenance">Maintenance informatique</option>
+                                <option value="applications">Applications sur mesure</option>
+                                <option value="formation">Formation</option>
+                            </select>
                         </div>
-                        <div class="col-sm-4">
-                            <div
-                                class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
-                                <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
-                                    <span class="mbri-map-pin"></span>
-                                </div>
-                                <div class="contact-details mt-2">
-                                    <h5>Visit</h5>
-                                    <p>New York, USA</p>
-                                </div>
-                            </div>
+
+                        <!-- Row 5: Message -->
+                        <div class="form-group full-width">
+                            <label for="message">VOTRE MESSAGE *</label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre projet, vos objectifs, votre timeline..." rows="6" required></textarea>
                         </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-button">
+                            ENVOYER MA DEMANDE
+                        </button>
+                        <p class="form-subtext">Réponse garantie sous 24h ouvrées</p>
+                    </form>
+
+                    <!-- Response Messages -->
+                    <div class="response-section">
+                        <p id="success-message" class="message-ok hidden">✓ Votre demande a été reçue. Nous vous répondrons sous 24h.</p>
+                        <p id="error-message" class="message-error" style="display: none;"></p>
                     </div>
-
-
-                    <div class="row mt-5">
-                        <div class="col-lg-12">
-                            <form action="php/form.php" method="post" id="contact-form">
-                                <div class="row">
-                                    <div class="col-lg-6 mt-3">
-                                        <div class="form-group">
-                                            <input type="text" name="name" id="name" class="form-control"
-                                                autocomplete="off" required>
-                                            <label>Full Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mt-3">
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" class="form-control"
-                                                autocomplete="off" required>
-                                            <label>Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                        <div class="form-group">
-                                            <input type="text" name="subject" id="subject" class="form-control"
-                                                autocomplete="off" required>
-                                            <label>Subject</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                        <div class="form-group">
-                                            <textarea name="text" id="text" rows="6" class="form-control"
-                                                required></textarea>
-                                            <label>Message</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                        <div class="form-group mb-0 text-right">
-                                            <button type="submit" id="contact-btn"
-                                                class="btn btn-outline-primary btn-bg">
-                                                Send Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
                 </div>
-
-
             </div>
         </section>
         <!-- /CONTACT SECTION END-->
-        <footer class="horizontal-footer shadow-footer">
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-md-12">
-                        <div class="text-center">
-                            <ul class="social-icons list-inline mt-5">
-                                <li class="list-inline-item">
-                                    <a class="social-facebook" href="https://www.facebook.com/irwin.jess.1"
-                                        target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-linkedin" href="https://www.linkedin.com/in/irwin-djriga/"
-                                        target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-whatsapp"
-                                        href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j'aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration."
-                                        target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="copyright-text mt-3 mb-5">2021 ©. RectCV Template. Developed and Designed by
-                                <b>themesuccess</b>
-                            </p>
-                        </div>
-                    </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- SECTION 1: ABOUT -->
+                                                                           <!-- SECTION 1: ABOUT -->
+                                                                           <div class="footer-section">
+                                                                               <div class="site-logo">
+                                                                                   <h3 class="site-logo-text">
+                                                                                       <span>Irwin</span>
+                                                                                       <span>Jess</span></h3>
+                                                                           </div>
+<p class="footer-description">
+                            Ingénieur Informatique | Développement logiciel & Génie logiciel.<br>
+                            Transformation d'idées en solutions techniques fiables et testées.<br>
+                            Services: Applications sur mesure, Automatisation, Formation, Maintenance.
+                        </p>
+                                                <div class="col-xl-6">
+                                                    <ul class="social-icons list-inline mt-4 mt-xl-0">
+                                                        <li class="list-inline-item">
+                                                            <a class="social-github" href="https://github.com/irwinjessk"
+                                                                target="_blank" rel="noopener noreferrer"><i
+                                                                    class="fab fa-github"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a class="social-linkedin"
+                                                                href="https://www.linkedin.com/in/irwin-djriga/"
+                                                                target="_blank" rel="noopener noreferrer"><i
+                                                                    class="fab fa-linkedin-in"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a class="social-facebook" href="https://www.facebook.com/irwin.jess.1"
+                                                                target="_blank" rel="noopener noreferrer"><i
+                                                                    class="fab fa-facebook-f"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a class="social-whatsapp"
+                                                                href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration."
+                                                                target="_blank" rel="noopener noreferrer"><i
+                                                                    class="fab fa-whatsapp"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                </div>
+
+                <!-- SECTION 2: EXPERTISES -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/automation.html">Automatisation</a></li>
+                        <li><a href="services/maintenance.html">Maintenance informatique</a></li>
+                        <li><a href="services/applications.html">Applications sur mesure</a></li>
+                        <li><a href="services/formation.html">Formation</a></li>
+                    </ul>
+                </div>
+
+                <!-- SECTION 3: GROUPE -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#parcours">Parcours</a></li>
+                        <li><a href="#techstack">Compétences</a></li>
+                        <li><a href="#myservices">Services</a></li>
+                        <li><a href="#projects">Réalisations</a></li>
+                    </ul>
+                </div>
+
+                <!-- SECTION 4: CONTACT -->
+                <div class="footer-section">
+                    <h3 class="footer-title">CONTACT</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+22507496767">+225 0506561623</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:infos@mgroup.net">irwindjriga@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i>
+                            Abidjan, yopougon cité verte
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-
-
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2026 Irwin Jess - Tous droits réservés
+                </p>
+                <div class="footer-legal-links">
+                    <a href="#">Abidjan - Côte d'Ivoire</a>
+                </div>
+            </div>
         </footer>
     </main>
 
