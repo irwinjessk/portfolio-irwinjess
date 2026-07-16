@@ -54,27 +54,36 @@
             </div>
         </div>
     </header>
-    <section class="service-details container">
-        <div class="service-details-actions">
-            <a href="../index.html#myservices" class="service-back-button" aria-label="Retour aux services">
-                <i class="fas fa-arrow-left"></i>
-            </a>
-        </div>
-        <div class="details-hero" data-aos="fade-down">
-            <img src="../assets/images/portfolio/Computer troubleshooting-amico.png" alt="Maintenance informatique">
-            <div class="details-hero-overlay">
-                <nav class="details-hero-breadcrumb" aria-label="Fil d'Ariane">
-                    <a href="../index.html">Accueil</a> <span>/</span> <a href="../index.html#myservices">Services</a> <span>/</span> <span>Maintenance informatique</span>
+    <section class="service-details">
+        <div class="container service-details-wrap">
+            <header class="service-details-top">
+                <a href="../index.html#myservices" class="service-back-button" aria-label="Retour aux services">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <nav class="details-breadcrumb" aria-label="Fil d'Ariane">
+                    <a href="../index.html">Accueil</a>
+                    <span class="details-breadcrumb-sep">/</span>
+                    <a href="../index.html#myservices">Services</a>
+                    <span class="details-breadcrumb-sep">/</span>
+                    <span aria-current="page">Maintenance informatique</span>
                 </nav>
-                <h1 class="details-hero-title">Maintenance informatique</h1>
+            </header>
+
+            <div class="details-hero" data-aos="fade-up">
+                <img src="../assets/images/portfolio/Computer troubleshooting-amico.png" alt="Maintenance informatique">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 details-content" data-aos="fade-right">
+
+            <div class="details-intro" data-aos="fade-up" data-aos-delay="60">
+                <h1 class="details-page-title">Maintenance informatique</h1>
+            </div>
+
+            <div class="row service-details-layout">
+            <div class="col-lg-8">
+                <div class="details-panel details-content" data-aos="fade-up" data-aos-delay="100">
                 <p>
                     La maintenance informatique regroupe l’ensemble des actions préventives et correctives qui permettent de garder un ordinateur fiable, rapide et sécurisé tout au long de sa vie. Elle ne se limite pas à réparer une panne : son but est surtout de l’éviter. Concrètement, cela consiste à faire les mises à jour, à nettoyer le système, à sauvegarder vos données, à optimiser les performances et à surveiller l’état de la machine. L’objectif est de faire durer votre matériel plus longtemps et de garder un ordinateur agréable à utiliser au quotidien.
                 </p>
-                <h2>Quand est ce que votre ordinateur a besoin de maintenance ?</h2>
+                <h2 class="details-section-title">Quand est-ce que votre ordinateur a besoin de maintenance ?</h2>
                 <p>
                     Voici quelques points parmi tant d’autres :
                 </p>
@@ -105,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="cta-section">
+                <div class="details-highlight">
                     <p>
                         Que vous soyez un particulier ou une entreprise, j’assure le diagnostic, le dépannage et le suivi de vos postes, afin de limiter les interruptions et les pertes de données au quotidien.
                     </p>
@@ -120,16 +129,18 @@
                         <li>Sauvegarde et sécurité</li>
                     </ul>
                 </div>
+                </div>
             </div>
-            <div class="col-lg-4 text-center d-flex flex-column justify-content-center" data-aos="fade-left">
+            <aside class="col-lg-4 details-aside" data-aos="fade-up" data-aos-delay="140">
                 <div class="details-side-card">
                     <h3>Un souci avec votre ordinateur ?</h3>
                     <p>
                         Décrivez le symptôme que vous observez, et je vous propose un diagnostic et une intervention rapide.
                     </p>
-                    <a href="../index.html#contact" class="cta-button">Me Contacter</a>
+                    <a href="../index.html#contact" class="cta-button">Demander un devis</a>
                 </div>
-            </div>
+            </aside>
+        </div>
         </div>
     </section>
 

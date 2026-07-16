@@ -767,29 +767,29 @@
 
         <!-- MY SERVICES SECTION START -->
         <section class="my-services" id="myservices">
-            <div class="container">
-                <!-- HEADER -->
-                <div class="section-title flex-grow-1">
+            <div class="container services-wrap">
+                <div class="section-title">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="text-center">
+                            <div class="text-center" data-aos="fade-up">
                                 <h2 data-aos="heading-show" class="rect_heading">Mes Services</h2>
-                                <p class="services-description m-0">Je vous accompagne dans la réalisation de vos projets digitaux de A à Z, en combinant design esthétique et développement robuste.</p>
+                                <p class="services-subtitle m-0">Je conçois, automatise, maintiens et forme pour que vos outils digitaux fonctionnent, évoluent et durent.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SERVICES GRID -->
-                <div class="services-grid row">
+                <div class="services-panel" data-aos="fade-up" data-aos-delay="80">
+                    <div class="services-grid">
 
                     <!-- SERVICE CARD 1: Automatisation -->
-                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="automation" data-aos="fade-left" data-aos-delay="100">
+                    <article class="service-card" data-service-id="automation" data-aos="fade-up" data-aos-delay="120">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Manufacturing Process-amico12.png"
                                 alt="Automatisation" class="service-image">
                         </div>
-                        <div class="service-overlay"></div>
+                        <div class="service-overlay" aria-hidden="true"></div>
+                        <div class="service-body">
                         <div class="service-content">
                             <h3 class="service-title">Automatisation</h3>
                             <p class="service-description">
@@ -801,15 +801,17 @@
                                 <span class="service-arrow">↗</span>
                             </a>
                         </div>
-                    </div>
+                        </div>
+                    </article>
 
                     <!-- SERVICE CARD 2: Maintenance informatique -->
-                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="maintenance" data-aos="fade-up" data-aos-delay="200">
+                    <article class="service-card" data-service-id="maintenance" data-aos="fade-up" data-aos-delay="180">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Computer troubleshooting-amico.png"
                                 alt="Maintenance informatique" class="service-image">
                         </div>
-                        <div class="service-overlay"></div>
+                        <div class="service-overlay" aria-hidden="true"></div>
+                        <div class="service-body">
                         <div class="service-content">
                             <h3 class="service-title">Maintenance informatique</h3>
                             <p class="service-description">
@@ -821,15 +823,18 @@
                                 <span class="service-arrow">↗</span>
                             </a>
                         </div>
-                    </div>
+                        </div>
+                    </article>
 
-                    <!-- SERVICE CARD 3: Applications sur mesure -->
-                    <div class="service-card service-card--featured col-12 col-md-6 col-lg-3" data-service-id="applications" data-aos="fade-up" data-aos-delay="300">
+                    <!-- SERVICE CARD 3: Applications sur mesure (service phare) -->
+                    <article class="service-card service-card--featured" data-service-id="applications" data-aos="fade-up" data-aos-delay="240">
+                        <span class="service-badge">Signature</span>
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/App development-amico.png"
                                 alt="Applications" class="service-image">
                         </div>
-                        <div class="service-overlay"></div>
+                        <div class="service-overlay" aria-hidden="true"></div>
+                        <div class="service-body">
                         <div class="service-content">
                             <h3 class="service-title">Applications sur mesure</h3>
                             <p class="service-description">
@@ -841,15 +846,17 @@
                                 <span class="service-arrow">↗</span>
                             </a>
                         </div>
-                    </div>
+                        </div>
+                    </article>
 
                     <!-- SERVICE CARD 4: Formation -->
-                    <div class="service-card col-12 col-md-6 col-lg-3" data-service-id="formation" data-aos="fade-right" data-aos-delay="400">
+                    <article class="service-card" data-service-id="formation" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-image-wrapper">
                             <img src="./assets/images/portfolio/Online-Review-amico.svg"
                                 alt="Formation" class="service-image">
                         </div>
-                        <div class="service-overlay"></div>
+                        <div class="service-overlay" aria-hidden="true"></div>
+                        <div class="service-body">
                         <div class="service-content">
                             <h3 class="service-title">Formation</h3>
                             <p class="service-description">
@@ -861,8 +868,10 @@
                                 <span class="service-arrow">↗</span>
                             </a>
                         </div>
-                    </div>
+                        </div>
+                    </article>
 
+                    </div>
                 </div>
             </div>
         </section>
