@@ -1441,38 +1441,6 @@ input.form-control {
   color: #1a7bb7;
 }
 
-@media (max-width: 992px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .contact {
-    padding: 90px 0;
-  }
-
-  .contact-panel {
-    padding: 24px;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form .form-row {
-    flex-direction: column;
-  }
-
-  .contact-info-item {
-    flex-direction: column;
-  }
-}
-
 @keyframes contactReveal {
   from {
     opacity: 0;

@@ -649,9 +649,10 @@
     flex-wrap: wrap;
   }
 
-  .contact-item {
+  .contact-item,
+  .contact-info-item {
     flex: 1;
-    min-width: 300px;
+    min-width: min(100%, 280px);
   }
 }
 
@@ -697,6 +698,10 @@
 
   .contact-form-section {
     padding: 1.5rem;
+  }
+
+  .contact-info-section {
+    flex-direction: column;
   }
 
   .form-row {
@@ -756,7 +761,8 @@
     padding: 1.25rem;
   }
 
-  .contact-item {
+  .contact-item,
+  .contact-info-item {
     padding: 1rem;
   }
 }

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!--Useful meta tags jessy-->
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Portfolio de DJRIGA IRWIN JESSY — Ingénieur Logiciel Full-Stack à Abidjan." />
+    <meta name="keywords" content="portfolio, développeur, full-stack, Abidjan, Irwin Jess" />
     <meta name="robots" content="index, follow, noodp" />
     <meta name="googlebot" content="index, follow" />
     <meta name="google" content="notranslate" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#0b0f1a" />
     <!--Preloader JS-->
     <script type="text/javascript" src="./assets/js/portfolio/preloader.js"></script>
     <!--Preloader Style-->
@@ -59,6 +60,8 @@
     <!--Contact Styles CSS-->
     <link rel="stylesheet" href="./assets/css/portfolio/contact.css" as="style"
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <link rel="stylesheet" href="./assets/css/portfolio/responsive-global.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <!-- International Telephone Input -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.16/build/css/intlTelInput.css">
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.16/build/js/intlTelInput.min.js"></script>
@@ -93,7 +96,7 @@
                 <!--Main Navigation START-->
                 <ul class="justify-content-end scrollspy collapse navbar-collapse" id="navigation">
                     <li>
-                        <a href="#home" class="nav-link">Acceuil</a>
+                        <a href="#home" class="nav-link">Accueil</a>
                     </li>
                     <li>
                         <a href="#about" class="nav-link">A propos</a>
@@ -108,7 +111,7 @@
                         <a href="#myservices" class="nav-link">Services</a>
                     </li>
                     <li>
-                        <a href="#projects" class="nav-link">Projets</a>
+                        <a href="#portfolio" class="nav-link">Projets</a>
                     </li>
 
                     <li>
@@ -137,29 +140,24 @@
             </div>
             <!--End of Parallax Background-->
             <div class="container introduction text-center">
-                <!-- Photo de profil -->
-
-                <!-- Phrase d'accroche personnalisée -->
-                <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
-                    Bienvenue sur mon portfolio !
-                </h2>
-                <p class="welcome_text mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">
-                    Je suis <span class="welcome-text-type" data-options="un Ingénieur Logiciel Full-Stack"></span>
+                <p class="hero-eyebrow mb-2" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    Bienvenue sur mon portfolio
                 </p>
-                <div id="parallax-scene" class="mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
-                    <div class="heading-zone">
-                        <h1>DJRIGA IRWIN JESSY</h1>
-                    </div>
+                <h2 class="hero-greeting mb-3" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">
+                    Je suis <span class="welcome-text-type" data-options="un Ingénieur Logiciel Full-Stack"></span>
+                </h2>
+                <div class="hero-name-wrap mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <h1 class="hero-name">DJRIGA IRWIN JESSY</h1>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="450" class="mb-3">
-                    <a href="./assets/pdf/portfolio/cv_irwin.pdf" class="btn btn-primary btn-small mr-2"
-                        target="_blank">Télécharger mon CV</a>
-                    <a href="#about" class="btn btn-outline-primary btn-small">En savoir plus</a>
+                <div class="hero-actions" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="450">
+                    <a href="./assets/pdf/portfolio/cv_irwin.pdf" class="btn btn-primary hero-btn hero-btn-primary"
+                        target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
+                    <a href="#about" class="btn btn-outline-primary hero-btn hero-btn-secondary">En savoir plus</a>
                 </div>
             </div>
             <div class="scroll-down">
-                <a href="#about" class="scroll-down-link text-center hoveroff" aria-label="Scroll Down">
-                    <div class="scroll-title">Scroll Down</div>
+                <a href="#about" class="scroll-down-link text-center hoveroff" aria-label="Descendre vers la section à propos">
+                    <div class="scroll-title">Défiler</div>
                     <div class="scroll-mouse">
                         <div class="whell"></div>
                     </div>
@@ -1118,7 +1116,7 @@
 
         <!--BLOG SECTION START-->
 <!--CONTACT SECTION START-->
-        <section class="contact-section-ux">
+        <section class="contact-section-ux" id="contact">
             <!-- Header Section -->
             <div class="contact-header">
                 <div class="header-leadership">
@@ -1288,7 +1286,7 @@
                         <li><a href="#parcours">Parcours</a></li>
                         <li><a href="#techstack">Compétences</a></li>
                         <li><a href="#myservices">Services</a></li>
-                        <li><a href="#projects">Réalisations</a></li>
+                        <li><a href="#portfolio">Réalisations</a></li>
                     </ul>
                 </div>
 

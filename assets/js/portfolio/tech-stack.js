@@ -30,11 +30,23 @@ class TechCarousel {
     init() {
         this.cloneItems();
         this.addHoverPause();
+        this.addTouchCards();
         this.addNavigation();
         this.addKeyboardNav();
         this.addTouchSwipe();
         this.updateButtonState();
         this.startAutoScroll();
+    }
+
+    addTouchCards() {
+        this.track.addEventListener('click', (e) => {
+            const card = e.target.closest('.tech-card');
+            if (!card || !window.matchMedia('(max-width: 767.98px)').matches) return;
+
+            const cards = this.track.querySelectorAll('.tech-card:not([aria-hidden="true"])');
+            cards.forEach((item) => item.classList.remove('is-touched'));
+            card.classList.add('is-touched');
+        });
     }
 
     cloneItems() {
