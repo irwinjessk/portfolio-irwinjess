@@ -329,6 +329,59 @@ a.contact-direct-link:focus-visible {
   margin-top: -0.15rem;
 }
 
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-section-ux .form-field-error {
+  display: block;
+  min-height: 1.1rem;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #ff9a9a;
+}
+
+.contact-section-ux .form-field-error:empty {
+  display: none;
+}
+
+.contact-section-ux .form-field-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.contact-section-ux .form-field-meta .form-field-error {
+  flex: 1;
+  margin-top: 0;
+}
+
+.contact-section-ux .form-char-counter {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  color: rgba(160, 169, 201, 0.65);
+}
+
+.contact-section-ux .form-char-counter.is-limit {
+  color: #ff9a9a;
+}
+
+.contact-section-ux .form-group input.is-invalid,
+.contact-section-ux .form-group select.is-invalid,
+.contact-section-ux .form-group textarea.is-invalid {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
 .contact-form-actions {
   display: flex;
   flex-direction: column;

@@ -1034,37 +1034,59 @@
                                 <p class="contact-form-lead">Quelques informations suffisent pour que je puisse vous répondre avec une proposition adaptée.</p>
                             </div>
                             <form class="contact-form" id="contactForm" novalidate>
+                                <div class="contact-honeypot" aria-hidden="true">
+                                    <label for="company">Ne pas remplir ce champ</label>
+                                    <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                                </div>
+
                                 <div class="form-group full-width">
                                     <label for="name">Nom ou entreprise</label>
-                                    <input type="text" id="name" name="name" placeholder="Ex. Dupont Jean" required>
+                                    <input type="text" id="name" name="name" placeholder="Ex. Dupont Jean" required
+                                        minlength="2" maxlength="100" autocomplete="name"
+                                        aria-describedby="name-error">
+                                    <small class="form-field-error" id="name-error" role="alert"></small>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="phone">Téléphone</label>
-                                        <input type="tel" id="phone" name="phone" placeholder="07 XX XX XX XX" autocomplete="tel" required>
+                                        <input type="tel" id="phone" name="phone" placeholder="07 XX XX XX XX"
+                                            autocomplete="tel" required maxlength="20" inputmode="tel"
+                                            aria-describedby="phone-error">
                                         <small class="form-help-text">Indicatif pays disponible dans le champ</small>
+                                        <small class="form-field-error" id="phone-error" role="alert"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                                        <input type="email" id="email" name="email" placeholder="votre@email.com"
+                                            required maxlength="254" autocomplete="email"
+                                            aria-describedby="email-error">
+                                        <small class="form-field-error" id="email-error" role="alert"></small>
                                     </div>
                                 </div>
 
                                 <div class="form-group full-width">
                                     <label for="needType">Type de besoin</label>
-                                    <select id="needType" name="needType" required>
+                                    <select id="needType" name="needType" required aria-describedby="needType-error">
                                         <option value="">Choisir un service...</option>
                                         <option value="automatisation">Automatisation</option>
                                         <option value="maintenance">Maintenance informatique</option>
                                         <option value="applications">Applications sur mesure</option>
                                         <option value="formation">Formation</option>
                                     </select>
+                                    <small class="form-field-error" id="needType-error" role="alert"></small>
                                 </div>
 
                                 <div class="form-group full-width">
                                     <label for="message">Votre message</label>
-                                    <textarea id="message" name="message" placeholder="Décrivez votre besoin, vos objectifs et votre échéance..." rows="4" required></textarea>
+                                    <textarea id="message" name="message"
+                                        placeholder="Décrivez votre besoin, vos objectifs et votre échéance..."
+                                        rows="4" required minlength="10" maxlength="2000"
+                                        aria-describedby="message-error message-counter"></textarea>
+                                    <small class="form-field-meta">
+                                        <span class="form-field-error" id="message-error" role="alert"></span>
+                                        <span class="form-char-counter" id="message-counter">0 / 2000</span>
+                                    </small>
                                 </div>
 
                                 <div class="contact-form-actions">
