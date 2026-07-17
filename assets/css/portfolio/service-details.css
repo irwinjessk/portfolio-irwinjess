@@ -386,6 +386,12 @@
   line-height: 1.7;
 }
 
+.details-side-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -416,6 +422,20 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(26, 123, 183, 0.28);
   outline: none;
+}
+
+.cta-button--secondary {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.cta-button--secondary:hover,
+.cta-button--secondary:focus-visible {
+  background: rgba(79, 163, 209, 0.12);
+  color: #ffffff;
+  border-color: rgba(79, 163, 209, 0.55);
+  box-shadow: none;
 }
 
 @keyframes detailsReveal {

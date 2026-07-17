@@ -222,7 +222,9 @@ const openProjectModal = (card) => {
         activeService = service;
         currentPage = 1;
         filterButtons.forEach(button => {
-            button.classList.toggle('active', button.dataset.filter === activeService);
+            const isActive = button.dataset.filter === activeService;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         updateUrl();
         renderProjects();
@@ -235,6 +237,14 @@ const openProjectModal = (card) => {
     });
 
     projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
         card.setAttribute('aria-label', `Voir la vidéo du projet ${card.querySelector('.project-card-title')?.textContent || ''}`);

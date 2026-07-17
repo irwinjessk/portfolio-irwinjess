@@ -41,6 +41,7 @@ div.section .section-title h2.rect_heading {
   min-height: 56px;
   line-height: 1.2;
   padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 section .section-title h2.rect_heading:before,
@@ -55,6 +56,11 @@ section.portfolio,
 section.my-services,
 section.tech-stack {
   padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+section.contact-section-ux {
+  padding-top: clamp(0.75rem, 2vw, 1.25rem);
   padding-bottom: var(--section-padding-y);
 }
 
@@ -449,23 +455,10 @@ section.home .introduction {
   color: rgba(79, 163, 209, 0.92);
 }
 
-.hero-greeting {
-  margin: 0;
-  font-size: clamp(1.05rem, 3.8vw, 1.35rem);
-  font-weight: 400;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.hero-greeting .welcome-text-type,
-.hero-greeting .typed-cursor {
-  color: #ffffff;
-  font-weight: 500;
-}
-
 .hero-name-wrap {
   display: flex;
   justify-content: center;
+  margin-bottom: clamp(0.65rem, 2vw, 0.85rem);
 }
 
 .hero-name {
@@ -495,6 +488,21 @@ section.home .introduction {
   right: -5px;
   background-color: #1a7bb7;
   border-radius: 1px;
+}
+
+.hero-greeting {
+  margin: 0 auto clamp(1.25rem, 3vw, 1.75rem);
+  max-width: 34rem;
+  font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-greeting .welcome-text-type,
+.hero-greeting .typed-cursor {
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .hero-actions {
@@ -929,6 +937,91 @@ section.my-services .section-title h2.rect_heading {
   line-height: 1.65;
   color: rgba(160, 169, 201, 0.92);
   font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   Mes Projets — compléments (détails dans projects.css)
+   -------------------------------------------------------------------------- */
+
+section.portfolio .section-title {
+  margin-bottom: 0;
+}
+
+section.portfolio .section-title .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+section.portfolio .section-title h2.rect_heading {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+section.projects-hero .section-title {
+  margin-bottom: 0;
+}
+
+section.projects-hero .section-title .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+section.projects-hero .section-title h2.rect_heading {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  min-height: auto;
+}
+
+.projects-page .projects-subtitle {
+  width: min(100%, 42rem);
+}
+
+.projects-subtitle {
+  display: block;
+  width: min(100%, 42rem);
+  margin: 0;
+  text-align: center;
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(160, 169, 201, 0.92);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   Contact — compléments (détails dans contact.css)
+   -------------------------------------------------------------------------- */
+
+section.contact-section-ux .section-title {
+  margin-bottom: 0;
+}
+
+section.contact-section-ux .section-title .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+section.contact-section-ux .section-title h2.rect_heading {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Footer — compléments (détails dans footer.css)
+   -------------------------------------------------------------------------- */
+
+.footer-ux {
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 /* --------------------------------------------------------------------------

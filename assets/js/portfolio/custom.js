@@ -200,18 +200,20 @@ $(window).on("load", function(){
 
     // OWL Carousel
 
-    $('#client_slider').owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        dots: true,
-        autoplayHoverPause: true,
-        autoplaySpeed: 1000,
-        navSpeed: 500,
-        dotsSpeed: 500,
-        dragEndSpeed: 500
-    });
+    if ($('#client_slider').length) {
+        $('#client_slider').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            dots: true,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            navSpeed: 500,
+            dotsSpeed: 500,
+            dragEndSpeed: 500
+        });
+    }
 
     
 

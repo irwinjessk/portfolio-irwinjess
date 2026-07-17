@@ -12,10 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
    if (!form) return;
 
    const submitButton = form.querySelector('button[type="submit"]');
+   const submitLabel = submitButton ? submitButton.querySelector('span') : null;
+   const successMessage = document.getElementById('success-message');
+   const errorMessage = document.getElementById('error-message');
+   const defaultSubmitText = submitLabel ? submitLabel.textContent.trim() : 'Envoyer ma demande';
    const fields = Array.from(form.querySelectorAll('input, select, textarea'));
 
    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   const phoneRegex = /^\+?[0-9\s\-\(\)]{10,}$/;
+   const phoneRegex = /^\+?[0-9\s\-\(\)]{8,}$/;
+
+   const hideFeedback = () => {
+     if (successMessage) {
+       successMessage.classList.add('is-hidden');
+     }
+     if (errorMessage) {
+       errorMessage.classList.add('is-hidden');
+       errorMessage.textContent = '';
+     }
+   };
 
    function validateField(field) {
      const value = field.value.trim();
@@ -34,11 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
      }
 
      if (!isValid) {
-       field.style.borderColor = '#FF5722';
-       field.style.boxShadow = '0 0 8px rgba(255, 87, 34, 0.2)';
+       field.style.borderColor = 'rgba(239, 68, 68, 0.45)';
+       field.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
      } else {
-       field.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+       field.style.borderColor = 'rgba(255, 255, 255, 0.09)';
        field.style.boxShadow = 'none';
+     }
+
+     if (field.tagName === 'SELECT' && isValid) {
+       field.style.backgroundColor = 'rgba(12, 16, 22, 0.92)';
      }
 
      return isValid;
@@ -46,10 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
    fields.forEach((field) => {
      field.addEventListener('blur', () => validateField(field));
+     field.addEventListener('input', hideFeedback);
    });
 
    form.addEventListener('submit', function (event) {
      event.preventDefault();
+     hideFeedback();
 
      let isFormValid = true;
      fields.forEach((field) => {
@@ -59,28 +79,42 @@ document.addEventListener('DOMContentLoaded', function () {
      });
 
      if (!isFormValid) {
-       alert('⚠️ Veuillez remplir correctement tous les champs');
+       if (errorMessage) {
+         errorMessage.textContent = 'Veuillez vérifier les champs du formulaire.';
+         errorMessage.classList.remove('is-hidden');
+       }
        return;
      }
 
      if (submitButton) {
        submitButton.disabled = true;
-       submitButton.textContent = 'Envoi en cours...';
+     }
+     if (submitLabel) {
+       submitLabel.textContent = 'Envoi en cours...';
      }
 
      const data = Object.fromEntries(new FormData(form));
      console.log('Form submitted:', data);
 
      setTimeout(() => {
-       alert('✅ Merci! Votre demande a été reçue.\nNous vous revenons sous 24h');
        form.reset();
        fields.forEach((field) => {
-         field.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+         field.style.borderColor = 'rgba(255, 255, 255, 0.09)';
          field.style.boxShadow = 'none';
+         if (field.tagName === 'SELECT') {
+           field.style.backgroundColor = 'rgba(12, 16, 22, 0.92)';
+         }
        });
+
+       if (successMessage) {
+         successMessage.classList.remove('is-hidden');
+       }
+
        if (submitButton) {
          submitButton.disabled = false;
-         submitButton.textContent = 'ENVOYER MA DEMANDE →';
+       }
+       if (submitLabel) {
+         submitLabel.textContent = defaultSubmitText;
        }
      }, 750);
    });

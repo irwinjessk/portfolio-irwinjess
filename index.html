@@ -60,6 +60,8 @@
     <!--Contact Styles CSS-->
     <link rel="stylesheet" href="./assets/css/portfolio/contact.css" as="style"
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
+    <link rel="stylesheet" href="./assets/css/portfolio/footer.css" as="style"
+        onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <link rel="stylesheet" href="./assets/css/portfolio/responsive-global.css" as="style"
         onload="this.rel='stylesheet';this.removeAttribute('onload');">
     <!-- International Telephone Input -->
@@ -143,12 +145,12 @@
                 <p class="hero-eyebrow mb-2" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
                     Bienvenue sur mon portfolio
                 </p>
-                <h2 class="hero-greeting mb-3" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">
-                    Je suis <span class="welcome-text-type" data-options="un Ingénieur Logiciel Full-Stack"></span>
-                </h2>
-                <div class="hero-name-wrap mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                <div class="hero-name-wrap mb-3" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">
                     <h1 class="hero-name">DJRIGA IRWIN JESSY</h1>
                 </div>
+                <h2 class="hero-greeting mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    Je suis <span class="welcome-text-type" data-options="un Ingénieur Logiciel Full-Stack"></span>
+                </h2>
                 <div class="hero-actions" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="450">
                     <a href="./assets/pdf/portfolio/cv_irwin.pdf" class="btn btn-primary hero-btn hero-btn-primary"
                         target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
@@ -888,19 +890,20 @@
 
         <!--PORTFOLIO SECTION START-->
         <section class="portfolio" id="portfolio">
-            <div class="container d-flex flex-column justify-content-between h-100">
-                <div class="section-title flex-grow-1">
+            <div class="container projects-wrap">
+                <div class="section-title">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="text-center">
+                            <div class="text-center" data-aos="fade-up">
                                 <h2 data-aos="heading-show" class="rect_heading">Mes Projets</h2>
-                                <p class="m-0">Voici quelques exemples de mes réalisations.</p>
+                                <p class="projects-subtitle m-0">Des réalisations concrètes en applications et automatisation, pour voir comment je concrétise des besoins réels au quotidien.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="section-content flex-grow-1">
-                    <div class="projects-grid projects-featured-grid" data-aos="fade-up" data-aos-delay="180">
+                <div class="projects-panel" data-aos="fade-up" data-aos-delay="80">
+                    <div class="projects-panel-inner">
+                    <div class="projects-grid projects-featured-grid">
                         <article class="project-card" data-service="applications">
                             <div class="project-card-media">
                                 <div class="youtube-preview" data-youtube-id="OXjrMjVJ-5g" aria-label="Aperçu vidéo Dashboard analytique">
@@ -930,14 +933,13 @@
                             </div>
                         </article>
                     </div>
-                    <div class="row">
-                        <div class="col-12 text-center mt-5">
-                            <a href="projects.html" class="project-more-link" aria-label="Voir tous les projets">
-                                <span class="project-more-icon"><i class="fas fa-layer-group"></i></span>
-                                <span>Voir tous les projets</span>
-                                <i class="fas fa-arrow-right project-more-arrow"></i>
-                            </a>
-                        </div>
+                    <div class="projects-footer">
+                        <a href="projects.html" class="project-more-link" aria-label="Voir tous les projets">
+                            <span class="project-more-icon"><i class="fas fa-layer-group"></i></span>
+                            <span>Voir tous les projets</span>
+                            <i class="fas fa-arrow-right project-more-arrow"></i>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -946,323 +948,246 @@
         <div class="project-video-modal" aria-hidden="true">
             <div class="project-video-modal-backdrop" data-project-modal-close></div>
             <div class="project-video-dialog" role="dialog" aria-modal="true" aria-labelledby="project-video-title">
-                <button class="project-video-close" type="button" aria-label="Fermer la vidéo" data-project-modal-close>
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="project-video-frame">
-                    <video class="project-video-player" controls playsinline></video>
-                </div>
-                <div class="project-video-info">
-                    <span class="project-video-tag"></span>
-                    <h2 id="project-video-title" class="project-video-title"></h2>
-                    <p class="project-video-text"></p>
-                </div>
-            </div>
-        </div>
-        <!--PROJECT Section START-->
-        <!--PROJECT Section END-->
-
-        <!--CLIENT SECTION START-->
-        <div class="section testimonial backgound-section"
-            style="background-image: url(https://via.placeholder.com/1920x1080)">
-            <div class="container">
-                <div class="row">
-                    <div id="client_slider" class="owl-carousel owl-theme">
-                        <div class="col-12">
-                            <div
-                                class="testimonial-box d-flex flex-column flex-md-row justify-content-between align-items-start p-5">
-                                <div class="testimonial_icon mr-4">
-                                    <span class="mbri-quote-left"></span>
-                                </div>
-                                <div class="testimonial_content mt-3">
-                                    <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                                        tenetur nisi iste, ipsa obcaecati quis laudantium error distinctio excepturi</p>
-                                    <div class="testimonial_author row mt-3">
-                                        <div class="col-12 col-md-7 col-lg-5 col-xl-4">
-                                            <div class="row">
-                                                <div class="col-12 col-md-3">
-                                                    <div class="author_picture mr-3"
-                                                        style="background-image: url(https://via.placeholder.com/70x70)">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <div class="author_info py-2">
-                                                        <h3>Linzi Landry</h3>
-                                                        <p>Graphic Designer</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div
-                                class="testimonial-box d-flex flex-column flex-md-row justify-content-between align-items-start p-5">
-                                <div class="testimonial_icon mr-4">
-                                    <span class="mbri-quote-left"></span>
-                                </div>
-                                <div class="testimonial_content mt-3">
-                                    <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                                        tenetur nisi iste, ipsa obcaecati quis laudantium error distinctio excepturi</p>
-                                    <div class="testimonial_author row mt-3">
-                                        <div class="col-12 col-md-7 col-lg-5 col-xl-4">
-                                            <div class="row">
-                                                <div class="col-12 col-md-3">
-                                                    <div class="author_picture mr-3"
-                                                        style="background-image: url(https://via.placeholder.com/70x70)">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <div class="author_info py-2">
-                                                        <h3>Ebony Phan</h3>
-                                                        <p>Web Developer</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div
-                                class="testimonial-box d-flex flex-column flex-md-row justify-content-between align-items-start p-5">
-                                <div class="testimonial_icon mr-4">
-                                    <span class="mbri-quote-left"></span>
-                                </div>
-                                <div class="testimonial_content mt-3">
-                                    <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                                        tenetur nisi iste, ipsa obcaecati quis laudantium error distinctio excepturi</p>
-                                    <div class="testimonial_author row mt-3">
-                                        <div class="col-12 col-md-7 col-lg-5 col-xl-4">
-                                            <div class="row">
-                                                <div class="col-12 col-md-3">
-                                                    <div class="author_picture mr-3"
-                                                        style="background-image: url(https://via.placeholder.com/70x70)">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <div class="author_info py-2">
-                                                        <h3>Mikaela Palmer</h3>
-                                                        <p>CEO of Company</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="project-video-layout">
+                    <div class="project-video-main">
+                        <div class="project-video-frame"></div>
                     </div>
+                    <aside class="project-video-panel">
+                        <div class="project-video-panel-top">
+                            <span class="project-video-tag"></span>
+                            <button class="project-video-close" type="button" aria-label="Fermer la vidéo" data-project-modal-close>
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <h2 id="project-video-title" class="project-video-title"></h2>
+                        <p class="project-video-text"></p>
+                        <p class="project-video-hint">Échap ou clic à l'extérieur pour fermer</p>
+                    </aside>
                 </div>
             </div>
-
         </div>
-        <!--CLIENT SECTION END-->
-        <!--BLOG SECTION START-->
 
-        <!--BLOG SECTION START-->
-<!--CONTACT SECTION START-->
+        <!--CONTACT SECTION START-->
         <section class="contact-section-ux" id="contact">
-            <!-- Header Section -->
-            <div class="contact-header">
-                <div class="header-leadership">
-                    <h2>TRAVAILLONS ENSEMBLE</h2>
-                    <h2 class="devis-title">DEMANDE DE <span class="title-accent">DEVIS</span></h2>
-                    <p class="subtitle-shadow">Remplissez le formulaire ci-dessous ou contactez-nous directement. Notre équipe vous revient sous <strong>24 heures ouvrées</strong></p>
-                </div>
-                <div class="texture-gradient">
-                    <div class="texture-multidiv"></div>
-                    <div class="texture-ikrdiv"></div>
-                    <div class="texture-3ddiv"></div>
-                </div>
-            </div>
-
-            <!-- Contact Layout: 2 Columns -->
-            <div class="contact-layout">
-                <!-- Contact Infos (Left) -->
-                <div class="contact-info-section">
-                    <div class="contact-info-item">
-                        <div class="contact-icon phone-icon"><i class="fas fa-phone"></i></div>
-                        <div class="contact-info-content">
-                            <span class="contact-label">TÉLÉPHONE</span>
-                            <p class="contact-value">+225 0506561623</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-item">
-                        <div class="contact-icon email-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-info-content">
-                            <span class="contact-label">EMAIL</span>
-                            <p class="contact-value">irwindjriga@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-item">
-                        <div class="contact-icon whatsapp-icon"><i class="fas fa-comments"></i></div>
-                        <div class="contact-info-content">
-                            <span class="contact-label">WHATSAPP</span>
-                            <p class="contact-value">+225 0506561623</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-item">
-                        <div class="contact-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-info-content">
-                            <span class="contact-label">ADRESSE</span>
-                            <p class="contact-value">Abidjan, yopougon cité verte</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form (Right) -->
-                <div class="contact-form-section">
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <!-- Row 1: Nom/Entreprise -->
-                        <div class="form-group full-width">
-                            <label for="name">NOM OU ENTREPRISE *</label>
-                            <input type="text" id="name" name="name" placeholder="Ex: SpaceX ou Dupont Jean" required>
-                        </div>
-
-                        <!-- Row 2: Phone & Email -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">TÉLÉPHONE *</label>
-                                <input type="tel" id="phone" name="phone" placeholder="07 XX XX XX XX" autocomplete="tel" required>
-                                <small class="form-help-text">Sélectionnez votre pays dans la liste déroulante</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">EMAIL *</label>
-                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+            <div class="container contact-wrap">
+                <div class="section-title">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center" data-aos="fade-up">
+                                <h2 data-aos="heading-show" class="rect_heading">Contact</h2>
+                                <p class="contact-subtitle m-0">Décrivez votre besoin via le formulaire ou contactez-moi directement. Je vous réponds sous <strong>24 heures ouvrées</strong>.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Row 3: Type de besoin -->
-                        <div class="form-group full-width">
-                            <label for="needType">TYPE DE BESOIN *</label>
-                            <select id="needType" name="needType" required>
-                                <option value="">Sélectionner un type de besoin...</option>
-                                <option value="automatisation">Automatisation</option>
-                                <option value="maintenance">Maintenance informatique</option>
-                                <option value="applications">Applications sur mesure</option>
-                                <option value="formation">Formation</option>
-                            </select>
+                <div class="contact-panel" data-aos="fade-up" data-aos-delay="80">
+                    <div class="contact-layout">
+                        <aside class="contact-direct" aria-label="Coordonnées">
+                            <div class="contact-direct-card">
+                                <p class="contact-direct-kicker">Disponible pour vos projets</p>
+                                <h3 class="contact-direct-title">Me joindre directement</h3>
+                                <ul class="contact-direct-list">
+                                    <li>
+                                        <a href="tel:+2250506561623" class="contact-direct-link">
+                                            <span class="contact-direct-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                                            <span class="contact-direct-text">
+                                                <span class="contact-direct-label">Téléphone</span>
+                                                <span class="contact-direct-value">+225 0506561623</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:irwindjriga@gmail.com" class="contact-direct-link">
+                                            <span class="contact-direct-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                                            <span class="contact-direct-text">
+                                                <span class="contact-direct-label">Email</span>
+                                                <span class="contact-direct-value">irwindjriga@gmail.com</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="WhatsApp" href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration." href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration." class="contact-direct-link" target="_blank" rel="noopener noreferrer">
+                                            <span class="contact-direct-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+                                            <span class="contact-direct-text">
+                                                <span class="contact-direct-label">WhatsApp</span>
+                                                <span class="contact-direct-value">Discuter sur WhatsApp</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="contact-direct-link contact-direct-link--static">
+                                            <span class="contact-direct-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                                            <span class="contact-direct-text">
+                                                <span class="contact-direct-label">Adresse</span>
+                                                <span class="contact-direct-value">Abidjan, Yopougon Cité Verte</span>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+
+                        <div class="contact-form-zone">
+                            <div class="contact-form-intro">
+                                <h3 class="contact-form-heading">Demande de devis</h3>
+                                <p class="contact-form-lead">Quelques informations suffisent pour que je puisse vous répondre avec une proposition adaptée.</p>
+                            </div>
+                            <form class="contact-form" id="contactForm" novalidate>
+                                <div class="form-group full-width">
+                                    <label for="name">Nom ou entreprise</label>
+                                    <input type="text" id="name" name="name" placeholder="Ex. Dupont Jean" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Téléphone</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="07 XX XX XX XX" autocomplete="tel" required>
+                                        <small class="form-help-text">Indicatif pays disponible dans le champ</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="needType">Type de besoin</label>
+                                    <select id="needType" name="needType" required>
+                                        <option value="">Choisir un service...</option>
+                                        <option value="automatisation">Automatisation</option>
+                                        <option value="maintenance">Maintenance informatique</option>
+                                        <option value="applications">Applications sur mesure</option>
+                                        <option value="formation">Formation</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="message">Votre message</label>
+                                    <textarea id="message" name="message" placeholder="Décrivez votre besoin, vos objectifs et votre échéance..." rows="4" required></textarea>
+                                </div>
+
+                                <div class="contact-form-actions">
+                                    <button type="submit" class="submit-button">
+                                        <span>Envoyer ma demande</span>
+                                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                    </button>
+                                    <p class="form-subtext">Réponse sous 24h ouvrées · Sans engagement</p>
+                                </div>
+                            </form>
+
+                            <div class="response-section" aria-live="polite">
+                                <p id="success-message" class="message-ok is-hidden">Votre demande a été reçue. Je vous répondrai sous 24h.</p>
+                                <p id="error-message" class="message-error is-hidden"></p>
+                            </div>
                         </div>
-
-                        <!-- Row 5: Message -->
-                        <div class="form-group full-width">
-                            <label for="message">VOTRE MESSAGE *</label>
-                            <textarea id="message" name="message" placeholder="Décrivez votre projet, vos objectifs, votre timeline..." rows="6" required></textarea>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="submit-button">
-                            ENVOYER MA DEMANDE
-                        </button>
-                        <p class="form-subtext">Réponse garantie sous 24h ouvrées</p>
-                    </form>
-
-                    <!-- Response Messages -->
-                    <div class="response-section">
-                        <p id="success-message" class="message-ok hidden">✓ Votre demande a été reçue. Nous vous répondrons sous 24h.</p>
-                        <p id="error-message" class="message-error" style="display: none;"></p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- /CONTACT SECTION END-->
-        <footer class="footer">
-            <div class="footer-content">
-                <!-- SECTION 1: ABOUT -->
-                                                                           <!-- SECTION 1: ABOUT -->
-                                                                           <div class="footer-section">
-                                                                               <div class="site-logo">
-                                                                                   <h3 class="site-logo-text">
-                                                                                       <span>Irwin</span>
-                                                                                       <span>Jess</span></h3>
-                                                                           </div>
-<p class="footer-description">
-                            Ingénieur Informatique | Développement logiciel & Génie logiciel.<br>
-                            Transformation d'idées en solutions techniques fiables et testées.<br>
-                            Services: Applications sur mesure, Automatisation, Formation, Maintenance.
+        <footer class="footer-ux" aria-label="Pied de page">
+            <div class="container footer-ux-wrap">
+                <div class="footer-ux-panel" data-aos="fade-up">
+                    <div class="footer-ux-cta">
+                        <div class="footer-ux-cta-copy">
+                            <p class="footer-ux-kicker">Prêt à lancer votre projet ?</p>
+                            <h3 class="footer-ux-cta-title">Donnons vie à votre idée avec une solution fiable et sur mesure.</h3>
+                        </div>
+                        <a href="#contact" class="footer-ux-cta-btn" aria-label="Demander un devis via le formulaire de contact">
+                            <span>Demander un devis</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="footer-ux-grid">
+                        <div class="footer-ux-brand">
+                            <a href="#home" class="footer-ux-logo hoveroff">Irwin<span>Jess</span></a>
+                            <p class="footer-ux-tagline">
+                                Ingénieur informatique — développement logiciel, automatisation et solutions digitales fiables à Abidjan.
+                            </p>
+                            <ul class="footer-ux-social" aria-label="Réseaux sociaux">
+                                <li>
+                                    <a class="footer-ux-social-link footer-ux-social-link--github" href="https://github.com/irwinjessk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer-ux-social-link footer-ux-social-link--linkedin" href="https://www.linkedin.com/in/irwin-djriga/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer-ux-social-link footer-ux-social-link--facebook" href="https://www.facebook.com/irwin.jess.1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer-ux-social-link footer-ux-social-link--whatsapp" href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <nav class="footer-ux-col" aria-labelledby="footer-services-heading">
+                            <h3 class="footer-ux-heading" id="footer-services-heading">Services</h3>
+                            <ul class="footer-ux-links">
+                                <li><a href="services/automation.html">Automatisation</a></li>
+                                <li><a href="services/maintenance.html">Maintenance informatique</a></li>
+                                <li><a href="services/applications.html">Applications sur mesure</a></li>
+                                <li><a href="services/formation.html">Formation</a></li>
+                            </ul>
+                        </nav>
+
+                        <nav class="footer-ux-col" aria-labelledby="footer-nav-heading">
+                            <h3 class="footer-ux-heading" id="footer-nav-heading">Navigation</h3>
+                            <ul class="footer-ux-links">
+                                <li><a href="#about">À propos</a></li>
+                                <li><a href="#parcours">Parcours</a></li>
+                                <li><a href="#techstack">Compétences</a></li>
+                                <li><a href="#myservices">Services</a></li>
+                                <li><a href="#portfolio">Projets</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="footer-ux-col footer-ux-col--contact" aria-labelledby="footer-contact-heading">
+                            <h3 class="footer-ux-heading" id="footer-contact-heading">Contact</h3>
+                            <ul class="footer-ux-contact">
+                                <li>
+                                    <a href="tel:+2250506561623" class="footer-ux-contact-link">
+                                        <span class="footer-ux-contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                                        <span>+225 0506561623</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:irwindjriga@gmail.com" class="footer-ux-contact-link">
+                                        <span class="footer-ux-contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                                        <span>irwindjriga@gmail.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration." class="footer-ux-contact-link" target="_blank" rel="noopener noreferrer">
+                                        <span class="footer-ux-contact-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+                                        <span>Discuter sur WhatsApp</span>
+                                    </a>
+                                </li>
+                                <li class="footer-ux-contact-item--static">
+                                    <span class="footer-ux-contact-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                                    <span>Abidjan, Yopougon Cité Verte</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-ux-bottom">
+                        <p class="footer-ux-copy">© 2026 Irwin Jess — Tous droits réservés</p>
+                        <p class="footer-ux-location">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            Abidjan, Côte d'Ivoire
                         </p>
-                                                <div class="col-xl-6">
-                                                    <ul class="social-icons list-inline mt-4 mt-xl-0">
-                                                        <li class="list-inline-item">
-                                                            <a class="social-github" href="https://github.com/irwinjessk"
-                                                                target="_blank" rel="noopener noreferrer"><i
-                                                                    class="fab fa-github"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a class="social-linkedin"
-                                                                href="https://www.linkedin.com/in/irwin-djriga/"
-                                                                target="_blank" rel="noopener noreferrer"><i
-                                                                    class="fab fa-linkedin-in"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a class="social-facebook" href="https://www.facebook.com/irwin.jess.1"
-                                                                target="_blank" rel="noopener noreferrer"><i
-                                                                    class="fab fa-facebook-f"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a class="social-whatsapp"
-                                                                href="https://wa.me/2250708051885?text=Bonjour%20Irwin,%20je%20viens%20de%20consulter%20votre%20portfolio.%20Votre%20profil%20a%20retenu%20mon%20attention%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20d'une%20opportunit%C3%A9%20de%20collaboration."
-                                                                target="_blank" rel="noopener noreferrer"><i
-                                                                    class="fab fa-whatsapp"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                </div>
-
-                <!-- SECTION 2: EXPERTISES -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services/automation.html">Automatisation</a></li>
-                        <li><a href="services/maintenance.html">Maintenance informatique</a></li>
-                        <li><a href="services/applications.html">Applications sur mesure</a></li>
-                        <li><a href="services/formation.html">Formation</a></li>
-                    </ul>
-                </div>
-
-                <!-- SECTION 3: GROUPE -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Navigation</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#parcours">Parcours</a></li>
-                        <li><a href="#techstack">Compétences</a></li>
-                        <li><a href="#myservices">Services</a></li>
-                        <li><a href="#portfolio">Réalisations</a></li>
-                    </ul>
-                </div>
-
-                <!-- SECTION 4: CONTACT -->
-                <div class="footer-section">
-                    <h3 class="footer-title">CONTACT</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i><a href="tel:+22507496767">+225 0506561623</a></li>
-                        <li><i class="fas fa-envelope"></i><a href="mailto:infos@mgroup.net">irwindjriga@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i>
-                            Abidjan, yopougon cité verte
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2026 Irwin Jess - Tous droits réservés
-                </p>
-                <div class="footer-legal-links">
-                    <a href="#">Abidjan - Côte d'Ivoire</a>
+                    </div>
                 </div>
             </div>
         </footer>

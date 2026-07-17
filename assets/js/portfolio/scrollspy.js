@@ -41,11 +41,19 @@ $(document).ready(function(){
 
     $('a[href^="#"]:not([href="#"]').on('click', function(event){
         var $anchor = $(this);
-        var offset = parseInt($('body').data('offset'));
-        $('html, body').stop().animate({
-            
-            scrollTop: ( $($anchor.attr('href')).offset().top ) - ( offset - 1 )
+        var targetSelector = $anchor.attr('href');
+        var $target = $(targetSelector);
+        var offset = parseInt($('body').data('offset'), 10);
 
+        if (targetSelector === '#contact') {
+            var $contactTitle = $target.find('.section-title').first();
+            if ($contactTitle.length) {
+                $target = $contactTitle;
+            }
+        }
+
+        $('html, body').stop().animate({
+            scrollTop: $target.offset().top - (offset - 1)
         }, 1500, 'easeInOutQuart');
         event.preventDefault();
     });
