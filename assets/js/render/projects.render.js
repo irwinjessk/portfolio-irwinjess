@@ -110,7 +110,7 @@
       }
       if (variant === 'listing' || isError) {
         secondaryAction = `
-          <a href="index.html#portfolio" class="projects-empty__action">Retour à l'accueil</a>
+          <a href="index.html#home" class="projects-empty__action">Retour à l'accueil</a>
         `;
       }
     }
@@ -162,7 +162,7 @@
       actionClass = 'projects-empty__action';
       secondaryAction = isListing
         ? `
-          <a href="index.html#portfolio" class="projects-empty__action">Retour à l'accueil</a>
+          <a href="index.html#home" class="projects-empty__action">Retour à l'accueil</a>
           <a href="index.html#contact" class="projects-empty__action">Me contacter</a>
         `
         : `
