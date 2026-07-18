@@ -6,30 +6,51 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   const { fetchFeaturedProjects } = window.PortfolioProjectsApi;
-  const { renderProjectCard } = window.PortfolioRenderProjects;
+  const { renderProjectCard, renderProjectsEmptyState } = window.PortfolioRenderProjects;
   const { LIMITS } = window.PortfolioApiConfig;
 
-  grid.setAttribute('aria-busy', 'true');
+  function bindEmptyStateActions() {
+    const retryBtn = grid.querySelector('[data-projects-retry]');
 
-  try {
-    const response = await fetchFeaturedProjects(LIMITS.HOME_PROJECTS);
-    const projects = response.data || [];
-
-    if (!projects.length) {
-      grid.innerHTML = '<p class="projects-empty">Aucun projet mis en avant pour le moment.</p>';
-      return;
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        loadFeaturedProjects();
+      });
     }
-
-    grid.innerHTML = projects.map((project, index) => renderProjectCard(project, index)).join('');
 
     if (window.AOS) {
       window.AOS.refreshHard();
     }
-
-    window.PortfolioProjectsUI.bindCards(grid);
-  } catch (error) {
-    grid.innerHTML = '<p class="projects-empty">Impossible de charger les projets pour le moment.</p>';
-  } finally {
-    grid.removeAttribute('aria-busy');
   }
+
+  async function loadFeaturedProjects() {
+    grid.setAttribute('aria-busy', 'true');
+
+    try {
+      const response = await fetchFeaturedProjects(LIMITS.HOME_PROJECTS);
+      const projects = response.data || [];
+
+      if (!projects.length) {
+        grid.innerHTML = renderProjectsEmptyState({ variant: 'featured' });
+        bindEmptyStateActions();
+        return;
+      }
+
+      grid.innerHTML = projects.map((project, index) => renderProjectCard(project, index)).join('');
+
+      if (window.AOS) {
+        window.AOS.refreshHard();
+      }
+
+      window.PortfolioProjectsUI.bindCards(grid);
+    } catch (error) {
+      grid.innerHTML = renderProjectsEmptyState({ variant: 'error' });
+      bindEmptyStateActions();
+    } finally {
+      grid.removeAttribute('aria-busy');
+    }
+  }
+
+  await loadFeaturedProjects();
 });

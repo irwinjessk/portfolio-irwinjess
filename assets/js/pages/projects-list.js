@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   const grid = document.getElementById('projects-grid');
   const filterRoot = document.getElementById('projects-filter');
   const paginationEl = document.querySelector('.projects-pagination');
-  const emptyState = document.querySelector('.projects-empty');
 
   if (!pageRoot || !grid) {
     return;
@@ -11,17 +10,27 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   const { fetchProjects } = window.PortfolioProjectsApi;
   const { fetchServices } = window.PortfolioServicesApi;
-  const { renderProjectCard } = window.PortfolioRenderProjects;
+  const { renderProjectCard, renderProjectsEmptyState } = window.PortfolioRenderProjects;
   const { renderDotPagination } = window.PortfolioPagination;
   const { LIMITS } = window.PortfolioApiConfig;
 
   let activeService = 'all';
   let currentPage = 1;
+  let availableServices = [];
 
   const getInitialService = () => {
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('service');
     return requested || 'all';
+  };
+
+  const getActiveServiceTitle = () => {
+    if (activeService === 'all') {
+      return '';
+    }
+
+    const match = availableServices.find((service) => service.slug === activeService);
+    return match ? match.title : activeService;
   };
 
   const updateUrl = () => {
@@ -71,6 +80,35 @@ document.addEventListener('DOMContentLoaded', async function () {
     loadProjects(currentPage);
   };
 
+  function bindEmptyStateActions() {
+    const retryBtn = grid.querySelector('[data-projects-retry]');
+    const resetBtn = grid.querySelector('[data-projects-reset-filter]');
+
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        loadProjects(currentPage);
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        setActiveService('all');
+      });
+    }
+
+    if (window.AOS) {
+      window.AOS.refreshHard();
+    }
+  }
+
+  function clearPagination() {
+    if (!paginationEl) return;
+    paginationEl.innerHTML = '';
+    paginationEl.classList.add('is-hidden');
+  }
+
   async function loadProjects(page) {
     grid.setAttribute('aria-busy', 'true');
 
@@ -84,31 +122,29 @@ document.addEventListener('DOMContentLoaded', async function () {
       const projects = response.data || [];
 
       if (!projects.length) {
-        grid.innerHTML = '';
-        if (emptyState) {
-          emptyState.style.display = 'block';
-        }
+        const variant = activeService === 'all' ? 'all' : 'filtered';
+        grid.innerHTML = renderProjectsEmptyState({
+          variant,
+          serviceTitle: getActiveServiceTitle(),
+        });
+        clearPagination();
+        bindEmptyStateActions();
       } else {
         grid.innerHTML = projects.map((project, index) => renderProjectCard(project, index)).join('');
-        if (emptyState) {
-          emptyState.style.display = 'none';
-        }
         window.PortfolioProjectsUI.bindCards(grid);
-      }
 
-      if (paginationEl && response.pagination) {
-        renderDotPagination(paginationEl, response.pagination, (nextPage) => {
-          currentPage = nextPage;
-          loadProjects(nextPage);
-          grid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        });
+        if (paginationEl && response.pagination) {
+          renderDotPagination(paginationEl, response.pagination, (nextPage) => {
+            currentPage = nextPage;
+            loadProjects(nextPage);
+            grid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+        }
       }
     } catch (error) {
-      grid.innerHTML = '';
-      if (emptyState) {
-        emptyState.textContent = 'Impossible de charger les projets pour le moment.';
-        emptyState.style.display = 'block';
-      }
+      grid.innerHTML = renderProjectsEmptyState({ variant: 'error' });
+      clearPagination();
+      bindEmptyStateActions();
     } finally {
       grid.removeAttribute('aria-busy');
       pageRoot.classList.add('projects-ready');
@@ -117,8 +153,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   try {
     const servicesResponse = await fetchServices({ page: 1, limit: LIMITS.FILTER_SERVICES });
-    renderFilters(servicesResponse.data || []);
+    availableServices = servicesResponse.data || [];
+    renderFilters(availableServices);
   } catch (error) {
+    availableServices = [];
     renderFilters([]);
   }
 

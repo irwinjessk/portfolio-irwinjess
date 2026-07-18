@@ -53,9 +53,34 @@
     `;
   }
 
+  function renderServicesEmptyState({ variant = 'empty' } = {}) {
+    const isError = variant === 'error';
+    const icon = isError ? 'fa-exclamation-circle' : 'fa-layer-group';
+    const title = isError ? 'Chargement indisponible' : 'Catalogue en préparation';
+    const message = isError
+      ? 'Les services n\'ont pas pu être récupérés pour le moment. Réessayez dans quelques instants.'
+      : 'Les fiches détaillées de mes services seront bientôt en ligne. En attendant, décrivez-moi votre besoin — je vous réponds rapidement.';
+    const actionLabel = isError ? 'Réessayer' : 'Me contacter';
+    const actionHref = isError ? '#' : '#contact';
+    const actionAttrs = isError ? ' data-services-retry href="#"' : ` href="${actionHref}"`;
+    const actionClass = isError ? 'services-empty__action' : 'services-empty__action services-empty__action--primary';
+
+    return `
+      <div class="services-empty${isError ? ' services-empty--error' : ''}" data-aos="fade-up" role="status">
+        <div class="services-empty__icon" aria-hidden="true">
+          <i class="fas ${icon}"></i>
+        </div>
+        <h3 class="services-empty__title">${title}</h3>
+        <p class="services-empty__text">${message}</p>
+        <a${actionAttrs} class="${actionClass}">${actionLabel}</a>
+      </div>
+    `;
+  }
+
   window.PortfolioRenderServices = {
     escapeHtml,
     resolveAssetUrl,
     renderServiceCard,
+    renderServicesEmptyState,
   };
 })(window);

@@ -7,11 +7,26 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   const { fetchServices } = window.PortfolioServicesApi;
-  const { renderServiceCard } = window.PortfolioRenderServices;
+  const { renderServiceCard, renderServicesEmptyState } = window.PortfolioRenderServices;
   const { renderDotPagination } = window.PortfolioPagination;
   const { LIMITS } = window.PortfolioApiConfig;
 
   let currentPage = 1;
+
+  function bindEmptyStateActions() {
+    const retryBtn = grid.querySelector('[data-services-retry]');
+
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        loadServices(currentPage);
+      });
+    }
+
+    if (window.AOS) {
+      window.AOS.refreshHard();
+    }
+  }
 
   async function loadServices(page) {
     grid.setAttribute('aria-busy', 'true');
@@ -21,11 +36,12 @@ document.addEventListener('DOMContentLoaded', async function () {
       const services = response.data || [];
 
       if (!services.length) {
-        grid.innerHTML = '<p class="services-empty">Aucun service disponible pour le moment.</p>';
+        grid.innerHTML = renderServicesEmptyState({ variant: 'empty' });
         if (paginationEl) {
           paginationEl.innerHTML = '';
           paginationEl.classList.add('is-hidden');
         }
+        bindEmptyStateActions();
         return;
       }
 
@@ -44,11 +60,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
       }
     } catch (error) {
-      grid.innerHTML = '<p class="services-empty">Impossible de charger les services pour le moment.</p>';
+      grid.innerHTML = renderServicesEmptyState({ variant: 'error' });
       if (paginationEl) {
         paginationEl.innerHTML = '';
         paginationEl.classList.add('is-hidden');
       }
+      bindEmptyStateActions();
     } finally {
       grid.removeAttribute('aria-busy');
     }

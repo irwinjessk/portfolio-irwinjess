@@ -37,8 +37,68 @@
     `;
   }
 
+  function renderProjectsEmptyState({
+    variant = 'all',
+    serviceTitle = '',
+  } = {}) {
+    const isError = variant === 'error';
+    const isFeatured = variant === 'featured';
+    const isFiltered = variant === 'filtered';
+
+    let icon = 'fa-folder-open';
+    let title = 'Portfolio en cours de publication';
+    let message =
+      'Les réalisations seront bientôt disponibles ici. En attendant, échangeons sur votre projet — je peux vous montrer des exemples concrets.';
+    let actionLabel = 'Me contacter';
+    let actionHref = 'index.html#contact';
+    let actionAttrs = ` href="${actionHref}"`;
+    let actionClass = 'projects-empty__action projects-empty__action--primary';
+    let secondaryAction = '';
+
+    if (isFeatured) {
+      title = 'Réalisations bientôt en ligne';
+      message =
+        'Les projets mis en avant arrivent prochainement. Contactez-moi pour découvrir des travaux similaires à votre besoin.';
+    } else if (isFiltered) {
+      icon = 'fa-filter';
+      title = serviceTitle
+        ? `Aucun projet « ${serviceTitle} » pour le moment`
+        : 'Aucun projet pour ce service';
+      message =
+        'Je n\'ai pas encore publié de réalisation dans cette catégorie. Explorez les autres filtres ou contactez-moi directement.';
+      actionLabel = 'Voir tous les projets';
+      actionAttrs = ' href="#" data-projects-reset-filter';
+      secondaryAction = `
+        <a href="index.html#contact" class="projects-empty__action">Me contacter</a>
+      `;
+    } else if (isError) {
+      icon = 'fa-exclamation-circle';
+      title = 'Chargement indisponible';
+      message =
+        'Les projets n\'ont pas pu être récupérés pour le moment. Réessayez dans quelques instants.';
+      actionLabel = 'Réessayer';
+      actionAttrs = ' href="#" data-projects-retry';
+      actionClass = 'projects-empty__action';
+    }
+
+    return `
+      <div class="projects-empty${isError ? ' projects-empty--error' : ''}" data-aos="fade-up" role="status">
+        <div class="projects-empty__icon" aria-hidden="true">
+          <i class="fas ${icon}"></i>
+        </div>
+        <h3 class="projects-empty__title">${escapeHtml(title)}</h3>
+        <p class="projects-empty__text">${message}</p>
+        <div class="projects-empty__actions">
+          <a${actionAttrs} class="${actionClass}">${actionLabel}</a>
+          ${secondaryAction}
+        </div>
+      </div>
+    `;
+  }
+
   window.PortfolioRenderProjects = {
     renderProjectCard,
+    renderProjectsEmptyState,
     resolveThumbnail,
   };
 })(window);
