@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const grid = document.getElementById('projects-grid');
   const filterRoot = document.getElementById('projects-filter');
   const paginationEl = document.querySelector('.projects-pagination');
+  const contentPanel = document.querySelector('.projects-content-panel');
 
   if (!pageRoot || !grid) {
     return;
@@ -109,6 +110,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     paginationEl.classList.add('is-hidden');
   }
 
+  function setPanelEmptyState(isEmpty) {
+    if (contentPanel) {
+      contentPanel.classList.toggle('projects-content-panel--empty', isEmpty);
+    }
+
+    if (filterRoot) {
+      filterRoot.classList.toggle('projects-filter--muted', isEmpty);
+    }
+  }
+
   async function loadProjects(page) {
     grid.setAttribute('aria-busy', 'true');
 
@@ -122,15 +133,19 @@ document.addEventListener('DOMContentLoaded', async function () {
       const projects = response.data || [];
 
       if (!projects.length) {
-        const variant = activeService === 'all' ? 'all' : 'filtered';
+        const variant = activeService === 'all' ? 'listing' : 'listing-filtered';
         grid.innerHTML = renderProjectsEmptyState({
           variant,
           serviceTitle: getActiveServiceTitle(),
+          services: availableServices,
+          context: 'listing',
         });
         clearPagination();
+        setPanelEmptyState(true);
         bindEmptyStateActions();
       } else {
         grid.innerHTML = projects.map((project, index) => renderProjectCard(project, index)).join('');
+        setPanelEmptyState(false);
         window.PortfolioProjectsUI.bindCards(grid);
 
         if (paginationEl && response.pagination) {
@@ -142,8 +157,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
       }
     } catch (error) {
-      grid.innerHTML = renderProjectsEmptyState({ variant: 'error' });
+      grid.innerHTML = renderProjectsEmptyState({
+        variant: 'error',
+        services: availableServices,
+        context: 'listing',
+      });
       clearPagination();
+      setPanelEmptyState(true);
       bindEmptyStateActions();
     } finally {
       grid.removeAttribute('aria-busy');
