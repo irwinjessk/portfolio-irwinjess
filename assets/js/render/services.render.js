@@ -24,12 +24,36 @@
     return `./${url.replace(/^\.\//, '')}`;
   }
 
+  function resolveServiceDetailHref(slug) {
+    return `service.html?slug=${encodeURIComponent(slug)}`;
+  }
+
+  function renderFooterServiceLinks(services) {
+    if (!services || !services.length) {
+      return `
+        <li>
+          <a href="#myservices">Découvrir mes services</a>
+        </li>
+      `;
+    }
+
+    return services
+      .map(
+        (service) => `
+          <li>
+            <a href="${resolveServiceDetailHref(service.slug)}">${escapeHtml(service.title)}</a>
+          </li>
+        `
+      )
+      .join('');
+  }
+
   function renderServiceCard(service, index) {
     const featuredClass = service.is_featured ? ' service-card--featured' : '';
     const badge = service.is_featured ? '<span class="service-badge">Signature</span>' : '';
     const delay = 120 + index * 60;
     const imageUrl = resolveAssetUrl(service.image_url);
-    const detailHref = `service.html?slug=${encodeURIComponent(service.slug)}`;
+    const detailHref = resolveServiceDetailHref(service.slug);
 
     return `
       <article class="service-card${featuredClass}" data-service-id="${escapeHtml(service.slug)}" data-aos="fade-up" data-aos-delay="${delay}">
@@ -80,7 +104,9 @@
   window.PortfolioRenderServices = {
     escapeHtml,
     resolveAssetUrl,
+    resolveServiceDetailHref,
     renderServiceCard,
     renderServicesEmptyState,
+    renderFooterServiceLinks,
   };
 })(window);
