@@ -498,3 +498,19 @@
     transform: none;
   }
 }
+
+.service-detail-status,
+.service-detail-error {
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  color: var(--details-text-muted);
+}
+
+.service-detail-error .details-page-title {
+  margin-bottom: 1rem;
+}
+
+.service-detail-error .cta-button {
+  margin-top: 1.5rem;
+  display: inline-block;
+}

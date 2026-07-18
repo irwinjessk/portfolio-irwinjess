@@ -1,20 +1,11 @@
 /*-----------------------------------------------------------
- * Contact form — validation + envoi Formspree
+ * Contact form — validation + envoi API portfolio
  *--
  */
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
-
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mkodjovr';
-  const NEED_TYPE_LABELS = {
-    automatisation: 'Automatisation',
-    maintenance: 'Maintenance informatique',
-    applications: 'Applications sur mesure',
-    formation: 'Formation',
-  };
-  const ALLOWED_NEED_TYPES = Object.keys(NEED_TYPE_LABELS);
 
   const RULES = {
     name: {
@@ -44,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         invalid: 'Le numéro de téléphone n\'est pas valide.',
       },
     },
-    needType: {
+    service_id: {
       messages: {
         required: 'Sélectionnez un type de besoin.',
         invalid: 'Choisissez une option valide dans la liste.',
@@ -68,15 +59,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const honeypotInput = form.querySelector('#company');
   const messageInput = form.querySelector('#message');
   const messageCounter = document.getElementById('message-counter');
+  const serviceSelect = form.querySelector('#service_id');
   const defaultSubmitText = submitLabel ? submitLabel.textContent.trim() : 'Envoyer ma demande';
   const fields = Array.from(form.querySelectorAll('input:not(#company), select, textarea'));
   const phoneInput = form.querySelector('#phone');
+
+  let allowedServiceIds = new Set();
 
   const fieldErrors = {
     name: document.getElementById('name-error'),
     email: document.getElementById('email-error'),
     phone: document.getElementById('phone-error'),
-    needType: document.getElementById('needType-error'),
+    service_id: document.getElementById('service_id-error'),
     message: document.getElementById('message-error'),
   };
 
@@ -92,9 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const hideFeedback = () => {
-    if (successMessage) {
-      successMessage.classList.add('is-hidden');
-    }
+    if (successMessage) successMessage.classList.add('is-hidden');
     if (errorMessage) {
       errorMessage.classList.add('is-hidden');
       errorMessage.textContent = '';
@@ -102,12 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   const resetSubmitButton = () => {
-    if (submitButton) {
-      submitButton.disabled = false;
-    }
-    if (submitLabel) {
-      submitLabel.textContent = defaultSubmitText;
-    }
+    if (submitButton) submitButton.disabled = false;
+    if (submitLabel) submitLabel.textContent = defaultSubmitText;
   };
 
   const setFieldState = (field, isValid, message = '') => {
@@ -140,14 +128,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const isPhoneValid = () => {
     if (!phoneInput) return false;
-
     const rawValue = phoneInput.value.trim();
     if (!rawValue) return false;
-
     if (phoneIti && window.intlTelInputUtils) {
       return phoneIti.isValidNumber();
     }
-
     const phoneValue = phoneIti ? phoneIti.getNumber() : rawValue;
     return /^\+?[0-9\s\-()]{8,20}$/.test(phoneValue);
   };
@@ -199,13 +184,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    if (isValid && field.name === 'needType') {
+    if (isValid && field.name === 'service_id') {
       if (!value) {
         isValid = false;
-        message = RULES.needType.messages.required;
-      } else if (!ALLOWED_NEED_TYPES.includes(value)) {
+        message = RULES.service_id.messages.required;
+      } else if (!allowedServiceIds.has(String(value))) {
         isValid = false;
-        message = RULES.needType.messages.invalid;
+        message = RULES.service_id.messages.invalid;
       }
     }
 
@@ -231,26 +216,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const updateMessageCounter = () => {
     if (!messageInput || !messageCounter) return;
-
     const length = messageInput.value.length;
     messageCounter.textContent = `${length} / ${RULES.message.max}`;
     messageCounter.classList.toggle('is-limit', length >= RULES.message.max);
   };
 
-  fields.forEach((field) => {
-    field.addEventListener('blur', () => validateField(field));
-    field.addEventListener('input', () => {
-      hideFeedback();
-      if (field.classList.contains('is-invalid')) {
-        validateField(field);
-      }
-      if (field.name === 'message') {
-        updateMessageCounter();
+  const applyApiFieldErrors = (body) => {
+    if (!body || typeof body !== 'object') return false;
+
+    let hasFieldError = false;
+
+    Object.entries(body).forEach(([key, messages]) => {
+      if (!Array.isArray(messages) || !messages.length) return;
+
+      const field = form.querySelector(`[name="${key}"]`);
+      if (field) {
+        setFieldState(field, false, messages[0]);
+        hasFieldError = true;
       }
     });
+
+    return hasFieldError;
+  };
+
+  async function loadServiceOptions() {
+    if (!serviceSelect) return;
+
+    serviceSelect.innerHTML = '<option value="">Chargement des services...</option>';
+    serviceSelect.disabled = true;
+
+    try {
+      const response = await window.PortfolioServicesApi.fetchServicesForSelect();
+      const services = response.data || [];
+
+      allowedServiceIds = new Set(services.map((service) => String(service.id)));
+
+      if (!services.length) {
+        serviceSelect.innerHTML = '<option value="">Aucun service disponible</option>';
+        return;
+      }
+
+      serviceSelect.innerHTML = [
+        '<option value="">Choisir un service...</option>',
+        ...services.map(
+          (service) => `<option value="${service.id}">${service.title}</option>`
+        ),
+      ].join('');
+      serviceSelect.disabled = false;
+    } catch (error) {
+      serviceSelect.innerHTML = '<option value="">Services indisponibles</option>';
+      if (errorMessage) {
+        errorMessage.textContent = 'Impossible de charger la liste des services. Réessayez plus tard.';
+        errorMessage.classList.remove('is-hidden');
+      }
+    }
+  }
+
+  fields.forEach((field) => {
+    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('input', hideFeedback);
+    field.addEventListener('change', hideFeedback);
   });
 
   if (messageInput) {
+    messageInput.addEventListener('input', updateMessageCounter);
     updateMessageCounter();
   }
 
@@ -259,9 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
     hideFeedback();
 
     if (honeypotInput && honeypotInput.value.trim()) {
-      if (successMessage) {
-        successMessage.classList.remove('is-hidden');
-      }
+      if (successMessage) successMessage.classList.remove('is-hidden');
       form.reset();
       resetFieldStyles();
       return;
@@ -273,9 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fields.forEach((field) => {
       if (!validateField(field)) {
         isFormValid = false;
-        if (!firstInvalidField) {
-          firstInvalidField = field;
-        }
+        if (!firstInvalidField) firstInvalidField = field;
       }
     });
 
@@ -284,57 +309,47 @@ document.addEventListener('DOMContentLoaded', function () {
         errorMessage.textContent = 'Veuillez corriger les champs signalés avant l\'envoi.';
         errorMessage.classList.remove('is-hidden');
       }
-      if (firstInvalidField) {
-        firstInvalidField.focus();
-      }
+      if (firstInvalidField) firstInvalidField.focus();
       return;
     }
 
-    if (submitButton) {
-      submitButton.disabled = true;
-    }
-    if (submitLabel) {
-      submitLabel.textContent = 'Envoi en cours...';
-    }
+    if (submitButton) submitButton.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Envoi en cours...';
 
     const formData = Object.fromEntries(new FormData(form));
-    const needTypeLabel = NEED_TYPE_LABELS[formData.needType] || formData.needType;
     const phoneNumber = phoneIti ? phoneIti.getNumber() : formData.phone.trim();
 
     const payload = {
       name: formData.name.trim(),
       email: formData.email.trim().toLowerCase(),
       phone: phoneNumber,
-      needType: needTypeLabel,
+      service_id: Number(formData.service_id),
       message: formData.message.trim(),
-      _subject: 'Nouvelle demande de devis — Portfolio Irwin Jess',
-      _replyto: formData.email.trim(),
     };
 
-    fetch(FORMSPREE_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(payload),
-    })
-      .then(async (response) => {
-        const result = await response.json().catch(() => ({}));
-
-        if (!response.ok) {
-          const detail = result.errors?.map((item) => item.message).join(' ') || '';
-          throw new Error(detail || 'Impossible d\'envoyer votre demande pour le moment.');
-        }
-
+    window.PortfolioContactApi.submitContact(payload)
+      .then((result) => {
         form.reset();
         resetFieldStyles();
+        loadServiceOptions();
 
         if (successMessage) {
+          const apiMessage = result.data && result.data.message;
+          if (apiMessage) {
+            successMessage.textContent = apiMessage;
+          }
           successMessage.classList.remove('is-hidden');
         }
       })
       .catch((error) => {
+        if (error.body && applyApiFieldErrors(error.body)) {
+          if (errorMessage) {
+            errorMessage.textContent = 'Veuillez corriger les champs signalés.';
+            errorMessage.classList.remove('is-hidden');
+          }
+          return;
+        }
+
         if (errorMessage) {
           errorMessage.textContent =
             error.message || 'Une erreur est survenue. Réessayez ou contactez-moi directement par email.';
@@ -343,4 +358,6 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .finally(resetSubmitButton);
   });
+
+  loadServiceOptions();
 });

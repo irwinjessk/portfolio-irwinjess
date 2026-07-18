@@ -22,6 +22,24 @@
   gap: clamp(1rem, 2.5vw, 1.35rem);
 }
 
+.services-empty,
+.services-pagination {
+  margin-top: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+.services-empty {
+  text-align: center;
+  color: rgba(160, 169, 201, 0.92);
+  font-size: 0.92rem;
+  padding: 1rem 0.5rem;
+}
+
+.services-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
 .service-card {
   position: relative;
   display: flex;

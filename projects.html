@@ -59,7 +59,7 @@
         </div>
     </header>
 
-    <main class="projects-page">
+    <main class="projects-page" data-api-listing="true">
         <div class="container projects-page-wrap">
             <nav class="projects-breadcrumb" aria-label="Fil d'Ariane" data-aos="fade-down">
                 <a href="index.html">Accueil</a>
@@ -82,54 +82,10 @@
 
             <div class="projects-content-panel" data-aos="fade-up" data-aos-delay="80">
                 <div class="projects-toolbar">
-                    <div class="projects-filter" role="tablist" aria-label="Filtrer les projets par service">
-                        <button class="project-filter-btn active" type="button" data-filter="all" role="tab" aria-selected="true">Tous</button>
-                        <button class="project-filter-btn" type="button" data-filter="applications" role="tab" aria-selected="false">Applications sur mesure</button>
-                        <button class="project-filter-btn" type="button" data-filter="automation" role="tab" aria-selected="false">Automatisation</button>
-                    </div>
+                    <div class="projects-filter" id="projects-filter" role="tablist" aria-label="Filtrer les projets par service"></div>
                 </div>
 
-                <div class="projects-grid">
-                <article class="project-card" data-service="applications">
-                    <div class="project-card-media">
-                        <div class="youtube-preview" data-youtube-id="dQw4w9WgXcQ" aria-label="Aperçu vidéo Application sur mesure">
-                            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Aperçu Application sur mesure" class="youtube-thumb">
-                        </div>
-                        <span class="project-video-badge"><i class="fas fa-play"></i></span>
-                    </div>
-                    <div class="project-card-body">
-                        <span class="project-card-tag">Applications sur mesure</span>
-                        <h3 class="project-card-title">Application sur mesure</h3>
-                        <p class="project-card-text">Développement d'applications web, mobile et Windows adaptées à vos besoins.</p>
-                    </div>
-                </article>
-                <article class="project-card" data-service="automation">
-                    <div class="project-card-media">
-                        <div class="youtube-preview" data-youtube-id="OXjrMjVJ-5g" aria-label="Aperçu vidéo Automatisation">
-                            <img src="https://img.youtube.com/vi/OXjrMjVJ-5g/hqdefault.jpg" alt="Aperçu Automatisation" class="youtube-thumb">
-                        </div>
-                        <span class="project-video-badge"><i class="fas fa-play"></i></span>
-                    </div>
-                    <div class="project-card-body">
-                        <span class="project-card-tag">Automatisation</span>
-                        <h3 class="project-card-title">Automatisation</h3>
-                        <p class="project-card-text">Création de packages et scripts d'automatisation pour gagner en productivité.</p>
-                    </div>
-                </article>
-                <article class="project-card" data-service="automation">
-                    <div class="project-card-media">
-                        <div class="youtube-preview" data-youtube-id="OXjrMjVJ-5g" aria-label="Aperçu vidéo Script d'automatisation">
-                            <img src="https://img.youtube.com/vi/OXjrMjVJ-5g/hqdefault.jpg" alt="Aperçu Script d'automatisation" class="youtube-thumb">
-                        </div>
-                        <span class="project-video-badge"><i class="fas fa-play"></i></span>
-                    </div>
-                    <div class="project-card-body">
-                        <span class="project-card-tag">Automatisation</span>
-                        <h3 class="project-card-title">Script d'automatisation</h3>
-                        <p class="project-card-text">Automatisation de tâches répétitives pour gagner du temps au quotidien.</p>
-                    </div>
-                </article>
-                </div>
+                <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
 
                 <div class="projects-empty">Aucun projet disponible pour ce service pour le moment.</div>
                 <div class="projects-pagination" aria-label="Pagination des projets"></div>
@@ -187,7 +143,15 @@
     <script src="./assets/js/portfolio/typed.min.js"></script>
     <script src="./assets/js/portfolio/particles.min.js"></script>
     <script src="./assets/js/portfolio/custom.js"></script>
+    <script src="./assets/js/api/config.js"></script>
+    <script src="./assets/js/api/http.js"></script>
+    <script src="./assets/js/api/services.api.js"></script>
+    <script src="./assets/js/api/projects.api.js"></script>
+    <script src="./assets/js/api/pagination.js"></script>
+    <script src="./assets/js/render/projects.render.js"></script>
+    <script src="./assets/js/render/services.render.js"></script>
     <script src="./assets/js/portfolio/projects.js"></script>
+    <script src="./assets/js/pages/projects-list.js"></script>
 </body>
 
 </html>
